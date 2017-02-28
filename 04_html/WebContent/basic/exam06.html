@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	table {
+		width: 300px;
+		height: 200px;
+	}
+</style>
+</head>
+<body>
+	<h1>테이블 연습 - 1</h1>
+	<table border = "1">
+	<thead>
+		<tr>
+			<th>항목1</th>	
+			<th>항목2</th>	
+		</tr>
+	</thead>
+	<!-- 별도로 지정해주지 않아도 웹 자체에서 tbody로 생성해줌 -->
+	<tr>
+		<td>1</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>4</td>
+		
+	</tr>
+	</table>
+	
+	<h1>테이블 연습 - 2</h1>
+	<table border = "1">
+	<thead>
+		<tr>
+			<th>항목1</th>	
+			<th>항목2</th>	
+		</tr>
+	</thead>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td colspan="2"> 3 </td>
+	</tr>
+	</table>
+	
+	<h1>테이블 연습 - 3</h1>
+	<table border = "1">
+	<thead>
+		<tr>
+			<th>항목1</th>	
+			<th>항목2</th>	
+		</tr>
+	</thead>
+	<tr>
+		<td rowspan="2"> 1 </td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		
+	</tr>
+	</table>
+	
+	
+	<h1>테이블 연습 - 4</h1>
+	<table border = "1">
+	<thead>
+		<tr>
+			<th>항목1</th>	
+			<th>항목2</th>	
+		</tr>
+	</thead>
+	<tr>
+		<td rowspan="2"> 1 </td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>
+			<table border="1">
+				<tr>
+				<td>111</td>
+				</tr>
+			</table>
+		</td>
+		
+	</tr>
+	</table>
+ <!-- 내용물은 td안에 -->
+	<h1>테이블 연습 - 5</h1>
+	<table border = "1">
+	<thead>
+		<tr>
+			<th width="350px">항목1</th>	
+			<th width="350px">항목2</th>	
+		</tr>
+	</thead>
+	<tr>
+		<td>이것은 테이블 연습입니다.</td>
+		<td>2</td>
+	</tr>
+	</table>
+</body>
+</html>

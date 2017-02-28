@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	// 윈도우가 다 로딩된 다음에 실행하세요~ but 요즘에는 그냥 body에 써주는게 추세임
+	window.onload = function () {
+		
+		// id가 result인 엘리먼트를 h1Obj 변수에 담는다.
+		var h1Obj = document.querySelector("#result");
+		console.log(h1Obj); // null이 나온 이유는 못찾았기때문! 코드는 위에서부터 아래로 실행되기 때문에 id가 result인게 밑에 있어서 -> 스크립트문을 바디로 옮겨 or 위로 올려주는 함수 쓰기
+		// h1Obj가 가리키는 엘리먼트의 내용을 "테스트"로 변경
+		h1Obj.innerHTML = "테스트";
+		
+	};
+</script>
+</head>
+<body>
+	<h1 id="result"></h1>
+</body>
+</html>

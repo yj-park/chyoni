@@ -1,0 +1,32 @@
+<!-- 
+	prototype의 프로퍼티는 읽기 전용
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function Member(id, name, age) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+	}
+	
+	Member.prototype.email = "a@a.com";
+	
+	var m1 = new Member("a", "aaa", 21);
+	console.log(m1.email);
+	
+	m1.email = "b@b.com";
+	console.log(m1.email);
+	
+	delete m1.email;
+	console.log(m1.email);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

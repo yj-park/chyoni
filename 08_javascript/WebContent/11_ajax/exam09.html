@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../framework-t.js"></script>
+</head>
+<body>
+	<h1>Ajax 통신으로 서버에서 받은 메세지</h1>
+	<!-- hello.jsp 결과를 div에 찍을거야 -->
+	<div id="result"></div>
+	<br>
+	<button>Ajax 호출</button>
+	
+	<script>
+		$("button").on("click", function () {
+			$.ajax({
+				url: "hello.jsp",
+				success: function (result) {
+						$("#result").html("<h1>" + result + "</h1>");
+				}
+			});
+		});
+	</script>
+</body>
+</html>

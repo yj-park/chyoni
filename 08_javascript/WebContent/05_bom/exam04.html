@@ -1,0 +1,32 @@
+<!-- 
+	location
+	
+	location.href = "url"; -> 지정한 페이지로 이동하세요
+	
+	// 현재 페이지 다시 로딩 : 새로고침
+	location.reload();
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+	/*
+		alert("3초 뒤에 페이지를 이동합니다.");
+		setTimeout(function () {
+			// 페이지 이동
+			location.href = "http://www.naver.com";
+		}, 3000);
+	*/
+		alert("창을 닫은 뒤 2초 뒤에 페이지를 새로고침합니다.");
+		setTimeout(function () {
+			// 페이지 새로고침
+			location.reload();
+		}, 2000);
+	</script>
+</body>
+</html>

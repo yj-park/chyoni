@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 
+		form 태그
+		- 사용자의 입력값을 처리하기 위해서 서버로 전송 
+		- 속성
+		  action : 사용자의 입력값을 처리할 서버의 페이지 주소
+	               ex) <form action="/04_html/member/input"> (html도 가능하지만)서버에서 처리하는 주소를 입력
+	      method : 요청방식(get / post) 
+	      		   get:url에 데이터가 보이는 방식, post:보안(로그인 등) or 대량의 데이터에 사용
+	      encType : file을 전송할 때 필수 사용(multipart/form-data) 
+	       			파일을 전송하기 위해서 사용. 대량의 데이터기 때문에 method는 post
+	       			application/x-www-form-urlencoded 가 기본값
+	       			ex) encType="multipart/form-data"
+ 	-->
+	<form action="/04_html/member/input" method="get">
+		<!--
+			type="text"
+			name : 서버에 전송되는 데이터를 구분하는 이름  
+				 : 서버에 데이터를 전송하기 위해서는 name 속성이 필수임
+				 : name 속성이 없으면 action에 지정한 페이지 url에 사용자의 입력값이 나타나지 않음(실수 多)
+				 : 사용자가 입력하여 서버로 전송한 추가 데이터를 parameter라고 칭하며 name = value형태를 가진다.
+				 : url과 사용자의 추가 데이터는 ?를 사용하여 구분하고 여러 개의 추가 데이터는 & 연산자로 연결됨
+				 : 기억안나면 네이버 검색 ㄱㄱ url 보면서 공부해
+				 <a herf="/04_html/quiz/a.html?msg=test">aaa</a> 이런식으로 직접 써줄 수도 있음!
+		 -->
+		text : <input type="text" name="id" size="40" 
+				placeholder="텍스트 입력창"
+				value="입력된 상태로 보인다."/>
+		<br>
+		
+		<!--
+			type="password"
+			: 사용자가 입력값을 암호화된 형태로 화면에 표시함
+			maxlength - 입력될 수 있는 최대 크기  
+		 -->
+		password : <input type="password" name="pass" maxlength="8"/>
+		<br>
+		
+		<!--
+			type="checkbox"
+			: 사용자가 다중 체크할 수 있는 입력창 제공
+			checked - 속성을 주면 기본적으로 체크된 상태를 유지함(ex 가입된 회원이 정보를 수정하는 경우) 
+			id - 문서상에서 고유한 값들로 설정한다. 해당 엘리먼트를 구분할 수 있는 이름
+			(테이블 시작과 끝을 통틀어 엘리먼트라고 함)
+			label - 특정한 엘리먼트를 선택할 수 있음 (글자만 클릭해도 체크 가능)
+			* value 속성을 설정해야만 서버에서 어떤 체크박스가 체크되었는지 확인 가능함
+			  value 속성 값이 없을 때 기본값은 on  
+		 -->
+		checkbox : 
+		<input type="checkbox" id="lang1" name="language" value="1"/> 
+		<label for="lang1">java</label>
+		<input type="checkbox" id="lang2" name="language" value="2" checked/> 
+		<label for="lang2">sql</label>
+		<input type="checkbox" id="lang3" name="language" value="3"/> 
+		<label for="lang3">html</label>
+		<br>
+		
+		radio :
+		<!-- type="radio"
+		        다중 선택이 아닌 그룹된 항목 중 하나만 선택하고자 할 때 사용
+	 	     ex) 이메일 수신 여부
+	 	     * name 속성이 같은 것들에 한해서 하나만 선택이 가능함! 무조건 이름이 같아야해
+		 -->
+		<input type="radio" id="gender1" name="gender" value="m" checked/>
+		<label for="gender1">남자</label>
+		<input type="radio" id="gender2" name="gender" value="f" />
+		<label for="gender2">여자</label>
+		<br>
+		
+		<!-- type="file"
+			 로컬 시스템의 파일을 서버로 전송하기 위해서 선택
+			 * form 태그의 encType="multipart/form-data"을 설정해야만 파일의 내용이 전송됨 (실수 多)
+		 -->
+		file :
+		<input type="file" name="attachFile" encType="multipart/form-data"/>
+		<br>
+		
+		<!--
+			type="submit"
+			: 사용자가 입력한 데이터들을 버튼을 클릭 시 서버로 전송함
+			: action에 지정한 페이지로 보내줌  
+		 -->
+		submit : <input type="submit" value="전송"/>
+		<br>
+		
+		<!--
+			type="button"
+			: 사용자가 직접 처리할 액션을 지정함
+			: 자바스크립트를 활용하여 액션 지정
+		 -->
+		button : <input type="button" value="클릭" onclick="alert('눌렀네');"/>
+		<br>
+		
+		<!--
+			type="rest"
+			: 사용자가 입력한 내용을 최초 화면 입력상태로 되돌린다. 초기화
+		 -->
+		reset : <input type="reset" value="초기화" />
+		<br>
+		
+		<!--
+			type="hidden"
+			: 사용자가 값을 직접 입력할 수 없으므로 value 속성을 이용해서 값을 설정함
+		 -->
+		hidden : <input type="hidden" name="msg" value="test"/>
+		<br>
+		
+		<!-- 요즘에는 button태그를 활용하는 것을 더 선호함 -->
+		<button type="submit"> 전송 </button>
+		<button type="button" onclick="alert('태그라네');"> 버튼 </button>
+		<button type="reset"> 초기화 </button>
+		<br>
+		
+		select :
+		<!-- 
+			select 
+			: 여러 개의 항목 중에서 드랍다운 형태를 이용해서 사용자가 선택한 값을 처리함
+			selected - 여러 개의 항목 중에서 하나를 기본적으로 선택된 상태를 유지함
+			한글을 직접 전송하진 않으므로 option에 value값 설정
+		 -->
+		<select name="recom">
+			<option value="1">신문</option>
+			<option value="2">인터넷</option>
+			<option value="3" selected >친구소개</option>
+			<option value="4">TV광고</option>
+		</select>
+		<br>
+		
+		
+		textarea :
+		<!-- 
+			textarea
+			: 여러 줄의 텍스트를 입력하는 창
+			rows - 입력되는 행의 라인 수
+			cols - 입력되는 열의 글자 수
+			줄넘김시 공백 발생할 수 있으니 주의!
+			ex)게시물 등록
+		 -->
+		<textarea name="content" rows="10" cols="80"
+		>여기에 내용을 입력하세요</textarea>
+		
+	</form>
+
+</body>
+</html>

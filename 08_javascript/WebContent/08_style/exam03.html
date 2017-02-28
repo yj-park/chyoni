@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	h3, div {
+		margin: 0px;
+		padding: 5px;
+		width: 80%;
+		border: 2px solid #334455;
+	}
+	
+	h3 {
+		background-color: #8899aa;
+	}
+	
+	div {
+		transition: 1S;	
+	}
+	
+	.show {
+		opacity: 1;
+		height: 100px;
+	}
+	.hidden {
+		opacity: 0;
+		height: 0px;
+	}
+</style>
+</head>
+<body>
+	<h2>어코디언 기능 구현</h2>
+	<h3 onclick="doAction();">오늘은 자바스크립트 CSS</h3>
+	<div class="hidden">
+		오늘은 자바스크립트 CSS 적용하는 날<br>
+		오늘은 자바스크립트 CSS 적용하는 날<br>
+		오늘은 자바스크립트 CSS 적용하는 날
+	</div>
+	<script>
+		// class속성이 hidden이면 안보이고 show하면 다시 나타남
+		function doAction() {
+			var divObj = document.querySelector("div");
+			console.log(divObj.className); // class만 쓰면 안돼! 특별한 기능을 가지고 있기 때문이지
+			
+			if (divObj.className == "hidden") {
+				divObj.className = "show";
+			} else {
+				divObj.className = "hidden";
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

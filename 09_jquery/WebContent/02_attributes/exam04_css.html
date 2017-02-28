@@ -1,0 +1,66 @@
+<!-- 
+	추출
+	.css("background-color")
+	
+	설정
+	.css("background-color", "yellow")
+	
+	삭제  css는 remove가 없어! 
+	.css("background-color", "transparent") // 부모꺼 적용. 투명한 색 ★
+	.css("background-color", "")
+	.removeAttr("style")
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style>
+div.a {
+	width: 300px;
+	height: 200px;
+	float: left;
+	margin: 5px;
+	border: 5px solid orange;
+	font-size: 30px;
+}
+button {
+	margin-left: 30px;
+	height: 50px;
+	font-weight: bold;
+}
+
+</style>
+<script src="../js/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<div class="a">CSS Style 적용</div><br />
+	<button>배경색 적용</button>
+	<button>배경색, 글자색 적용</button>
+	<button>제거</button>
+	<script>
+		$("button:eq(0)").on("click", function() {
+			$("div.a").css("background", "tomato");
+		});
+		$("button:eq(1)").on("click", function() {
+		//	$("div.a").css("background", "tomato");
+		//	$("div.a").css("color", "white");
+			$("div.a").css({
+				"background": "tomato",
+				"color": "white"
+			});
+		});
+		$("button:eq(2)").on("click", function() {
+			$("div.a").css("background-color", "")
+		//	$("div.a").removeAttr("style")
+		});
+	</script> 
+</body>
+</html>
+
+
+
+
+
+
+

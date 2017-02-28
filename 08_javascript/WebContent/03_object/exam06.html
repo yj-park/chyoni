@@ -1,0 +1,46 @@
+<!-- 
+	with (객체) {
+	
+	}
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var member = {
+		id : "hong",
+		setId : function (id) {
+			this.id = id;
+		},
+		getId : function () {
+			return this.id;
+		}
+	};
+	
+	console.log(member.getId());
+	member.setId("kang");
+	console.log(member.getId());
+	
+	/*
+	function getId() {
+		return "abcd";
+	}
+	
+	console.log(getId());
+	
+	//쓰기는 편하지만 이름이 같아서 충돌날 수 있으므로 권장 X
+	*/
+	with (member) {
+		console.log(getId());
+		setId("kang");
+		console.log(getId());
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

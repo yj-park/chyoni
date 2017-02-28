@@ -1,0 +1,26 @@
+<!-- 
+	일치 연산자 (===, !==) : 값과 타입을 함께 체크 (타입 변경 필요 X) 특별한 케이스가 아니라면 이 방법을 써라~
+	3 === "3" -> 1. 타입 비교시 같지 않은 경우 false 반환 (문자열 3이랑 숫자 타입 3이네? 음 같지 않군!->false)
+	             2. 타입이 같은 경우 값을 비교
+	
+	==, != : 값만 체크 
+	3 == "3" -> 1. 먼저 양쪽의 타입을 같게 변경시킨다. (문자열 3을 숫자 타입 3으로 변경)
+	            2. 값 비교
+ -->
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		var a = 100;
+		var b = "100";
+		
+		console.log("a == b", a == b);
+		console.log("a === b", a === b);
+	</script>
+</body>
+</html>

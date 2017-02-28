@@ -1,0 +1,61 @@
+<!-- 
+    엘리먼트 안쪽 내용물과의 여백 : padding
+    오른쪽은 내용물이 많아야 적용된게 보임!
+ -->
+<html>
+<head>
+<title> 여백(padding) </title>
+<meta charset="utf-8" />
+<style>
+	p {
+		color: #ffffff;
+		background-color: black;
+	}
+	
+	p.padding1 {
+		padding-top: 25px;
+		padding-right: 50px;
+		padding-bottom: 25px;
+		padding-left: 50px;
+	}
+	
+	p.padding2 {
+		padding: 25px 50px;
+	}
+	
+	p.padding3 {
+		padding: 50px;
+	}
+	
+	p.padding4 {
+		padding: 25px 50px 10px;
+	}
+</style>
+</head>
+<body>
+
+<p>
+    color: #ffffff;<br />
+    background-color: black;
+</p>
+<p class="padding1">
+    padding-top: 25px;<br />
+    padding-right: 50px;<br />
+    padding-bottom: 25px;<br />
+    padding-left: 50px;
+</p>
+
+<p class="padding2">
+    padding: 25px 50px;
+</p>
+
+<p class="padding3">
+    padding: 50px;
+</p>
+
+<p class="padding4">
+    padding: 25px 50px 10px;
+</p>
+
+</body>
+</html>

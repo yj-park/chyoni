@@ -1,0 +1,715 @@
+day01
+FirstTest:출력
+
+-----------------
+day02
+MainTest:메인메소드 위치 변경
+ArgsTest:배열 공간의 길이, 위치
+VariableScopeTest:변수의 범위 선언
+ParseIntTest:문자열 → 정수
+DataTypePest:데이터타입 (기본형)
+PrintTest:출력문
+
+-----------------
+day03
+Test01:기본형에 대한 형변환 연습
+Test02:상수형 만들기(final), 문자열 상수 연습
+Test03:연산자(논리,비교,3항,산술,배정)연습
+Test04:조건문 if
+Test05:조건문 switch
+Test06:Scanner
+Test07:Random
+Quiz01:if+Scanner 연습
+
+----------------- 
+day04
+Test01:반복문 for 1 기본형
+Test02:반복문 for 2 중첩(별, 공백만들기)
+Test03:반복문 for 3 break,continue
+Quiz01:반복문 for 연습
+Test04:반복문 while
+
+-----------------
+day05
+Test01:배열+반복문
+Test02:배열의 초기화 방법
+Test03:배열의 요소값 확인법(for (배열 요소):배열명)
+Test04:배열의 복사
+Quiz01:최댓값,최솟값
+Quiz02:인덱스 Swap
+Quiz03:flag,반
+Quiz04:배열 연습(숫자 찾기)
+Quiz05:배열 연습(큰 수 찾기)
+Quiz06:배열 연습(홀수 인덱스 합계 구하기)
+Quiz07:배열 연습(인덱스 swap)
+-----------------
+
+day06
+Test01:클래스 + 메모리 그리기
+Quiz01:메모리 그리기 연습1 
+Quiz02:메모리 그리기 연습2 (빵)
+Quiz03:메모리 그리기 연습3 (Linked list, Double linked list-next, prev추가하기)
+
+-----------------
+day07
+BoardTest & BoardVO: 게시판 테스트
+Test01:호출 연습
+Sub01:메소드 연습
+Test02:호출 연습 - 반환타입
+Sub02:메소드 연습 - 반환타입
+Test03:호출 연습 - 응용(사칙연산, 배열-크기,범위,중복 삭제)
+Sub03:메소드 연습 - 응용(사칙연산, 배열-크기,범위,중복 삭제)
+Singer:setter와 getter 설정
+Member:setter와 getter 자동 설정
+
+-----------------
+day08
+Test01:String class 주소에 대한 특징
+Test02:문자열을 다루는 클래스(String, StringBuffer, StringBuilder)
+Test03:String class API 
+Test04:파일 읽기
+Quiz01:파일 읽기 연습
+Quiz02:파일 읽기 연습-영화제목
+
+-----------------
+day09
+Test01:생성자
+Dog:생성자, 순서, 값 초기화, 오버로딩
+ExDate:연습문제1
+ExDateMain:연습문제1
+Dog(quiz):연습문제2
+DogMain:연습문제2
+Test02:static (Method Area)
+Test03:static & non-static
+Quiz01:디자인패턴 문제
+
+-----------------
+day11
+Person:부모클래스
+Student:자식클래스
+Test01:상속테스트1
+Test02:super();
+Test03:toString
+Test04:객체의 형변환(묵시적)
+Test05:객체의 형변환(명시적)
+Exam01:게시판 기능+toString 연습
+
+-----------------
+day12
+Test01:추상클래스 & 추상메소드
+Test02:인터페이스
+Test03:final
+
+-----------------
+day13
+Test01:Exception
+Test02:try,catch
+Test03:try,catch문의 활용법
+Test04:try,catch,finally
+Test05:throws
+Test06:throw
+Test07:사용자 정의 예외
+
+-----------------
+day14
+Test01:Date
+Test02:Calendar
+Test03:Calendar2(날짜정보변경,date객체얻기,마지막날짜구하기)
+Test04:SimpleDateFormat(format,parse)
+Test05:Wrapper 클래스(1.4버전&1.5버전)
+Test06:Generic(+Box01~04)
+Box01:String타입만 받는 역할
+Box02:Object타입만 받는 역할 
+Box03:<> 단일
+Box04:<> 여러개
+
+-----------------
+day15
+Test01:list
+Test02:set
+Quiz01:set을 이용한 로또
+Test03:Map
+Quiz02:selection sort
+Quiz03:배열 안 데이터 정렬
+Data:내림차순, 오름차순
+Quiz04:배열 안 데이터 정렬(오름차순, 내림차순)
+Quiz05:collections(sort,reverse,shuffle)
+Quiz06:성적 발표(파일,split,list 등)
+
+-----------------
+day16
+Test01:파일(객체 존재여부, 생성)
+Quiz01:파일 폴더 생성
+Test02:파일 폴더 출력
+Test03:파일 클래스 메소드(path,name,parent,length,createNewFile,delete)
+Test04:Read 메소드 기본
+Test05:IO객체 읽기(기준점,-1),닫기
+Test06:IO객체 쓰기
+Test07:파일 복사하기
+Test08:음악 파일 복사하기(방법 똑같음)
+Test09:음악 파일 복사하기(속도 향상 buffer[])
+Test10:Buffered 클래스
+Test11:close(1.7이후)
+Quiz02:문자 출력(\r,\n해결)
+
+-----------------
+day18 - SQL
+1일차:select, create, drop, 제약조건, RENAME, DESC, insert, update, delete
+
+-----------------
+day19 - SQL
+2일차:where,order by,
+
+-----------------
+day20 - SQL
+3일차:join
+
+-----------------
+day21 - SQL & JDBC
+4일차:시퀀스, alter
+Test01:jdbc
+Test02:update jdbc
+Test03:delete jdbc
+Test04:resultset (게시판의 전체조회) 
+Test05:? ? ? (동적 sql-insert문)
+Test06:? ? (동적 sql-update)
+Test07:? (동적 sql-delete)
+Test08: timestamp
+
+-----------------
+day22
+Test01~04:connectionfactory
+ConnectionFactory:연결객체 얻기
+ConnectionPool:커넥션들이 담겨있는 객체
+Test05~08:connectionpool & connectionfactory.close()
+게시판 6단계:JDBC활용
+Test09:JDBC와 트랜잭션
+Test10:자동커밋해제,try문에서 commit,rollback
+Test11:rsmd를 통한 테이블 조회
+Test12:rsmd, columncount
+
+-----------------
+day23 - myBatis
+db.properties:db연결정보
+sqlMapConfig.xml:전체 환경설정 파일, db연결, vo alias설정, xml정의
+member.xml:쿼리문을 작성할 xml(id, parametertype,resulttype)
+MemberVO,SearchVO: 결과값
+MyAppSqlConfig:dao파일이 SqlSession을 얻어감
+member.sql:연습 테이블 생성
+MemberMapper:SqlSession메소드 
+-----------------
+day24 - myBatis & html
+MemberMapper:SqlSession메소드 
+member.xml:
+first.html:
+exam01:문서구조 이해
+exam02:경로찾기(절대,상대)
+exam03:block(div,h1)/inline(span)
+exam04:br, hr, &nbsp, hgroup 
+exam05:UL, OL
+exam06:th, td, tr, colspan,rowspan
+-----------------
+day25 - html
+exam07:form태그
+
+-----------------
+day26 - java network
+board_level7_test : 게시판 7단계 시험
+ip.Test01:InetAddress 클래스
+Quiz01:InetAddress+String class API
+network.url.Test01:URL 구성요소 확인
+=Test02:URL 연결, 데이터 읽기(보이스피싱같은 화면만들기)
+api.Test01:다음 오픈api를 통해 xml 데이터 가져오기
+xml.Test01:xml 데이터를 파싱하는 API 
+api.Test02:다음 오픈api xml을 파싱하는 api 연습
+ItemVO: api.Test02를 위한 VO파일
+=Test02: family.xml 파싱
+FamilyVO: family.xml의 vo생성
+
+-----------------
+day27 - network
+json.Test01:json의 구조
+json.Test02:자바 객체->json/json->자바 객체 (feat.gson)
+api.BlogJsonVO:test02를 위한 vo만들기 연습
+api.Test03:다음 오픈 api json-> 자바 객체
+server.AppServer/Client Test01:서버&클라이언트 접속
+=AppServer/Client Test02:서버&클라이언트 접속->메세지보내기
+=AppServer/Client Test03:메세지보내기2
+=AppServer/Client Test04:에코 (프로젝트 채팅기능ㄱㄱ?)
+webserver.Test01:응답부분 규칙 (색깔바뀌는 날짜 상자)
+=Test02:요청부분 규칙
+=Test03:요청부분 규칙 응용(잘라내기)- GET방식
+
+-----------------
+day28
+webserver.Test04:요청부분 규칙 클래스 분리
+HttpServlentRequest:요청부분 페이지 정보에 해당하는 클래스(파싱해서 map에 담기)
+URLEncodeDecodeTest:한글 인코딩&디코딩하기
+게시판 8단계:네트워크 이용 웹 접근 구현
+
+-----------------
+day29 - Servlet(자바 웹기술) & JSP
+servlet.Test01:servlet 인터페이스를 상속하는 클래스 - servlet mapping 활용
+WebContent.WEB-INF.web.xml:servlet mapping
+Test02:annotation활용
+Test03:GenericServlet 설명
+Test04:HttpServlet 설명
+Test05:브라우저로 결과보내기
+Test06:브라우저로 결과보내기-받기
+Test07:
+Test08:
+게시판 9단계:서블릿 적용
+
+-----------------
+day30 - Servlet & JSP(Script-요즘 사용 권장 X)
+script.exam01:.jsp->.java변환 알아보기
+exam02:주석문<%-- --%>,컨텐트주석문<!-- -->
+exam03:스크립트릿(실행문)<% %>,표현식<%= %>,내장객체
+exam04:지시문<%@ %>-page import
+quiz.input:구구단 단수 입력
+quiz.output:구구단 출력
+quiz.quiz01:현재날짜출력하기
+게시판10단계:jsp적용
+
+-----------------
+day31 - Servlet & JSP - EL
+servlet.forward.Test01:forward
+WebContent.servlet.forward.test01.jsp:forward를 사용하여 저장된 값 꺼내기
+call.jsp:forward를 호출하기 위한 페이지
+servlet.send.Test01:sendRedirect
+WebContent.servlet.send.test01.jsp:sendRedirect를 사용하여 저장된 값 꺼내기
+call.jsp:sendRedirect를 호출하기 위한 페이지
+게시판11단계:servlet과 jsp 분리
+WebContent.jsp.el.exam01:el
+exam02:el(자동 null값 처리)
+exam03:pageContext, request,
+
+-----------------
+day32 - Servlet & JSP - JSTL(fear.el)
+exam04:찾은 객체의 속성에 접근하는 방법 Map
+exam05:VO클래스 속성에 접근하는 방법, 프로젝트경로명 설정
+src.jsp.Count:CountVO
+exam06:${a[]}
+jsp.quiz.quiz02:el이해하기 "성공"출력 +)Exam02 -> 열심히 연습해 기본이야
+jsp.jstl.exam01:coretag-set,remove
+exam02:core-out
+exam03:core-if
+exam04:core-choose
+exam05:core-forEach(달력 시간)반복문
+게시판12단계:el, core태그 적용
+exam06:core-redirect
+exam07:fn함수
+exam08:fmt태그 ★심화★ 
+
+-----------------
+day33 - 쿠키,세션
+src.jsp.cookie.Test01:쿠키 생성
+WebContent.jsp.cookie.exam01:쿠키 생성 & 한글인코딩,디코딩
+src.jsp.session.Test01:세션 (jsessionid 확인)
+WebContent.jsp.session.loginForm:로그인
+src.jsp.session.Login:로그인servlet
+LoginVO:로그인VO(로그인 사용자 정보)
+WebContent.jsp.session.main:메인(로그인 성공 시 이동 화면)
+src.jsp.session.Logout:로그아웃(세션삭제&페이지이동)
+WebContent.jsp.include.exam01:
+one:공통부분
+exam02:
+bottom:공통부분
+exam03:
+게시판13단계: 인클루드, 로그인
+
+-----------------
+day34 - 파일 업로드
+WebContent.jsp.file.exam01:파일 업로드
+src.jsp.file.Upload:exam01을 처리하기 위한 servlet
+(파일업로드 스트림 확인&cos.jar사용-날짜별 디렉토리 관리&실제 폴더에 파일 인식하기&파일정보 db저장&파일이름처리(한글인 경우 변경하기))
+test.txt:파일 업로드 확인을 위한 텍스트 파일
+WebContent.upload폴더:업로드된 파일이 전송되는 폴더
+src.jsp.file.MlecFileRenamePolicy:파일이름처리 클래스
+게시판14단계:파일 업로드
+DB-Script폴더:테이블 스크립트 모아두기(다른 곳에서도 사용할 수 있도록)
+
+-----------------
+day35 - 파일 다운로드
+src.jsp.file.Download: 다운로드 
+WebContent.jsp.file.exam02:파일 다운로드
+게시판15단계:파일 다운로드 & 댓글
+
+-----------------
+day36 - CSS
+07_css.00_basic.exam01:CSS 스타일 적용하기
+exam02:inline방식
+exam03:internal방식
+exam04.css:css파일
+exam04.html:external style sheet
+01_selector.01:모든 요소 선택
+02:태그명으로 특정 태그 선택
+03:Class선택자(사용多/ .클래스명)
+04:id선택자(#)
+05:자식 태그 선택자 (>)
+06:인접 형제 선택자 (+ ~)
+07:그룹 선택자 (,)
+08:속성 선택 ([])
+09:가상클래스 active,hover,focus
+10:상태 선택자 checked,focus,disabled (:)
+11:첫번째 & 마지막 자식
+12:홀수번째 & 짝수번째
+13:가상위치 순서
+02_priority.01:CSS 우선순위 6가지 경우
+02:상속
+03:id,.클래스,태그명의 우선순위
+04:style 직접 지정
+05:!important
+03_background.00:배경색 설정
+01:배경 이미지 설정(하나의 이미지 반복)
+02:배경 이미지 반복 여부 적용
+03:배경 이미지 위치 조정
+04:이미지 고정 or 스크롤 이동
+05:background 한 번에 지정
+06:배경 크기
+07:padding
+
+-----------------
+day37 - CSS
+04_font.01:font-family
+02:size
+03:style&weight
+04:폰트 한 번에 지정
+05_text.01:color
+02:align
+03:decoration (mini1 줄긋기 필요)
+04:transform
+05:indent:첫번째 줄 단락 띄우기
+06:line-height,letter-spacing,word-spacing
+07:overflow(ellipsis) ★
+06_box.00:box-model
+01:padding
+02:margin(엘리먼트 간 간격)
+03:border-style
+04:border-width
+05:border-color
+06:border 한 번에 지정
+07:radius(선 둥글게 만들기)
+07_shadow.01:text-shadow
+02:box-shadow
+08_table.01:table-style(한 번에 쓰기)
+09_list.01:list(ul & ol)
+10_block_inline.exam01:block&inline
+exam02:태그 성격 변화(display)
+exam03:inline-block
+11_layer.01_position:
+position2:
+position3:
+position4:
+02_z-index:출력순서?
+03_opacity:투명도
+03_visibility:영역은 차지하고 사라짐->hidden
+04_float1:
+float2:
+float3:
+05_overflow:
+
+-----------------
+day38 - CSS
+12_transition.01~04:transition
+05:transition-timing-function효과 모아보기
+13_animation.01:animation
+exam01:움직이는 원 만들기 
+14_transform.01:이동
+02:비율
+03:확대,축소
+04:비틀기
+05:변형 기준점 
+06:실행순서에 따른 결과값 변화-ㅎㅎㅎㅎ
+07:rotate+translate+perspective, 3d
+08:cube
+15_menu.01:메뉴
+menu.css:메뉴 만들기
+exam02:투명한 이미지
+exam03:펜션
+
+-----------------
+day42 - javascript
+01_basic.exam01:사용하는 위치,실행순서
+exam02.js:javascript문법들이 담긴 파일
+exam02.html:exam02.js를 호출하기 위한 파일(src 속성을 통해 불러오기)
+exam03:var를 통한 변수선언,변수 타입,동적타입
+exam04:변수의 중복 선언 가능(오류X but 권장X)
+exam05:호이스팅(변수나 함수 선언을 제일 위로 끌어올리는 작업)
+exam06:데이터 타입(기본:숫자,문자,논리,null,undefined/참조:object)
+exam07:데이터 타입 검사(typeof)
+exam08:문자열
+exam09:문자열과 숫자타입의 연산
+exam10:특정값이 false인 상황 (null,undefined, 0, '', NaN) ★ 면접 질문 가능
+exam11:일치연산자(===,!==) 특별한 경우 제외하고 권장하는 방법! 습관들일것
+exam12:알림창 (alert,confirm,prompt)
+exam13:for반복문(변수 선언에 주의할 것! var)
+exam14:배열 ★ (길이, 유사배열객체)
+exam15:배열 요소 마지막에 추가하기(배열명.push(대입할 데이터값))
+02_function.exam01:선언적 함수(함수명 존재,호이스팅,return문 없으면 undefined 반환)
+exam02:익명 함수
+exam03:함수의 오버로딩(지원X. 덮어쓰기)
+exam04:매개변수 처리
+quiz.exam01:총정리
+exam02:sum 함수 구현 문제 ★
+
+-----------------
+day43 - javascript
+exam05:글로벌변수(window객체에 포함된 전역변수)
+exam06:내부함수
+exam07:콜백함수(특정 상황에서 자동으로 호출되는 함수)
+exam08:콜백함수2 (어려웡ㅠㅠ)
+exam09:콜백함수3 (불편한 작업을 콜백으로 실행시키고 필요한 작업만 할 수 있음)
+exam10:전역&지역 콜백, 호이스팅
+exam11:기본형일때 매개변수
+exam12:참조형일때 매개변수
+exam13:즉시실행함수
+exam14:클로저
+exam15:클로저2
+quiz.exam03:콜백함수 만들기
+<글로벌함수>
+exam16:setTimeout, clearTimeout
+exam17:시간 1초씩 흐르게 만들기
+quiz.exam04:시작/정지버튼으로 시간 출력하기
+exam18:setInterval, clearInterval
+quiz.exam05:시작/정지버튼으로 시간 출력하기2 ->정보 팝업창,이미지 슬라이드 등
+exam19:eval(문자열을 메모리에 올리고 사용할 수 있게 처리해줌)
+exam20:isNaN(숫자인지 아닌지 판별해줌)
+exam21:parseInt, Number
+quiz.exam06:숫자+숫자 NaN
+exam07:계산기
+
+-----------------
+day44 - javascript
+03_object.exam01:객체생성방식(리터럴,생성자)
+exam02:프로퍼티값 설정과 추출, 값 변경 ??
+exam03:프로퍼티 동적 추가
+exam04:프로퍼티 삭제 (delete 객체.프로퍼티명)
+exam05:this
+exam06:with(객체)
+exam07:객체와 함수의 차이,프로토타입체인
+exam08:객체의 주소값 활용
+exam09:문자열을 json객체로 변환(JSON.parse)
+exam10:객체만들기
+04_constructor.exam01:생성자
+exam02:생성자2 + 마음대로 할당하기
+exam03:prototype은 읽기 전용
+exam04:내부함수에서의 this(스코프체인 이용)
+
+-----------------
+day45 - javascript
+05_bom.exam01:팝업창 띄우기
+exam01_child:팝업창4 자식페이지
+exam02:팝업창 생성,이동,사이즈변경
+exam03:윈도우 로딩
+exam04:location(이동,새로고침)
+exam05:navigator
+exam06:랜덤
+quiz.exam01:랜덤하게 화면 이동하기
+exam02:계산하기 부모창
+exam02_child:계산하기 팝업 자식창
+06_dom.exam01:동적으로 엘리먼트 노드,텍스트 노드 생성하기
+exam01-5:exam01 연습하기
+exam02:생성한 엘리먼트에 속성 추가하기
+exam03:속성 추가하기
+exma04:설정된 속성 확인하기
+exam05:innerHTML사용한 엘리먼트 속성 추가
+quiz.exam01:연습문제(클릭 count)
+exam06:querySelector -> 조건에 맞는 하나만 넘겨받기
+exam07:querySelectorAll -> 배열로 넘겨받기
+exam08:특정엘리먼트 제거 방법
+quiz.exam02:연습문제2(이미지 크기 조절하기) 
+exam03:연습문제3(동영상 문제1-링크 클릭시 생성)
+exam04:연습문제4(동영상 문제2-추가 & 삭제)
+
+-----------------
+day46 - javascript
+07_form.exam01:form onsubmit(회원가입 등에 활용)+focus,select
+exam02:js파일 불러오기, js를 통한 직접 submit
+00_common.validUtil:exam02에서 불러올 js파일
+exam03:checkbox(전체선택&해제)
+exam04:selectbox
+exam05:옵션 항목의 동적 추가(Option내장객체,DOM API,innerHTML->ajax필수),삭제
+quiz.exam01:동영상 연습문제1
+exam02:동영상 연습문제2
+
+-----------------
+day47 - javascript
+08_style.exam:style 사용하는 법
+exam02:버튼을 통해 선택화면만 보여주기
+exam03:아코디언 효과(show&hidden 애니메이션)
+exam04:아코디언 효과2()
+exam05:슬라이드
+quiz.exam01:슬라이드 연습
+exam02:슬라이드연습2
+09_event.exam01:
+exam02:마우스관련 이벤트 시 필수인 좌표 (공부해 따로)
+exam03:addEventListener
+exam04:강제 이벤트 발생시키기(자동클릭)
+exam05:이벤트 중지시키기
+exam06:이벤트 전파
+exam07:마우스 이벤트 연습
+quiz.exam01:이동 상자 만들기
+exam02:메모장 추가 문제
+
+-----------------
+day48 
+exam01: jquery 함수만들기 (값 설정&추출)
+framework.js: jquery 함수만들기
+
+-----------------
+day49 - ajax
+11_ajax.exam01:
+hello.jsp:불러올 파일
+exam02:
+src.ajax.exam02:
+exam03:readyState확인
+exam04:파라미터 처리 확인
+src.ajax.exam04:
+exam05:xml 데이터 처리
+src.ajax.exam05:xml파일
+exam06:json 데이터 처리
+src.ajax.exam06:json객체
+quiz.
+
+-----------------
+day50 - ajax
+framework-t.js:ajax 공통 만들기
+exam07:공통ajax테스트
+exam08~12:exam01~06을 공통ajax사용해서 바꿔보기(03은 ㄴㄴ)
+
+-----------------
+day52 - jquery
+01_selector.exam01:$(document).ready(function)-window.onload방법대체
+exam02:cssSelector
+exam03:disabled,checked.selected
+exam04:locationSelector
+02_attributes.exam01:css Class
+exam02:toggleClass
+exam03:attr(속성 추가,제거,변경)
+exam04:css(추출,설정,삭제)
+exam05:html추출
+exam06:prop설정,추출
+exam07:val설정,추출
+exam08:prop설정,추출
+03_dom.exam01:remove,empty
+exam02:after,before,append,prepend,replaceWith
+exam03:insertAfter,insertBefore,appendTo,prependTo
+exam04:태그 추가
+exam05:이미지 이동 move
+exam06:파일 복사 clone
+04_traversing.exam01:add,children,children("span"),end,filter
+exam02:find,prev,prevAll,next,nextAll,slice(0,2),siblings
+
+-----------------
+day53 - jquery
++혼자서 공부해(exam06까지)
+05_css.exam01:offset():위치확인, width&height:크기확인
+exam02:scroll,scrollTop
+quiz.exam01: ?????
+06_event.exam01:on을 사용하여 여러개의 이벤트 발생
+exam02:click,hover
+exam03:이벤트 중지 off
+exam04:글씨 출력
+exam05:prepend(첫번째 자식 요소 값 삽입)
+exam06:clientX,clientY,offsetX,offsetY
+quiz.exam01:canvas에 그림그리기
+exam07:trigger 이벤트 자동 호출
+exam08:이벤트 전파 중지&할당 이벤트 중지
+exam09:event bound(동적으로 엘리먼트 추가&이벤트 부여)
+exam10:key(입력된 글자 수 세기)
+exam11:input(페이지 이동없이 submit처리하기)
+07_effect.exam01:toggle,fade/slideToggle,fadeOut,faidIn,slideUp/down
+exam02:애니메이션 등록,중단
+exam03:기존의 정보 바꾸기(추가하기)
+exam04:이벤트의 순차적 수행(chain animate)
+08_imgSlide.slide:이미지 슬라이더
+quiz.quiz01:이미지 슬라이드 퀴즈
+
+-----------------
+day54 - ajax
+09_ajax.exam01:done&fail
+src.ajax.Exam01:exam01에서 호출할 파일
+exam02:ajax사용 호출
+src.ajax.Exam02:exam02,03에서 호출할 파일
+exam03:$.get/post/load
+src.ajaxfile.Exam01:ajax를 통한 파일 업로드
+10_ajaxFile.exam01:ajax를 통한 파일 업로드
+exam02:ajax를 통한 파일 업로드(파일 2개)
+exam03:multiple(html5이후 여러개의 파일 선택 가능)
+exam04:multiple+ 자동submit아닌 내가 직접 시키기 
+exam05:multiple+자동submit아닌 내가 직접 시키기+첨부파일동적코딩
+00_exam.exam01:메모장 만들기
+
+-----------------
+day55 - MVC
+10_mvc.springframework.DispatcherServlet:모든 요청을 받을 servlet
+
+-----------------
+day56 - MVC -> reflection
+src.reflection.Test01:클래스 정보 얻기(클래스이름.class/Class.forName/객체.getClass())
+Dog:불러올 클래스 파일
+Test02:클래스의 메소드 정보 가져오기 
+Test03:리플렉션을 이용한 메소드 실행
+URLHandlerMapping:수정 +web.xml,Dispatcher!
+mvc.WebUtil:
+
+-----------------
+day57 - MVC -> annotation
+src.annotation.exam01.Test
+Marker:marker annotation
+Type1:single-value
+Type2:single-value
+exam02.Test:
+FullValue:multi-value
+exam03.Test:
+MyTarget:위치 지정
+exam04.Test:
+AnnoApply:어노테이션을 적용할 대상 클래스
+ClassAnno:single-value
+RunAnno1:실행 시 참조되는 어노테이션
+RunAnno2:실행 시 참조되는 어노테이션
+quiz.Test:
+
+-----------------
+day58 - MVC 
+varargs.Test01:var arguments
+
+-----------------
+day59 - Spring -> DI
+11_spring-di:maven project
+O1basic:기존방식1-필요한 위치에서 객체 생성
+O2basic:기존방식2-인터페이스를 사용한 객체 생성
+O3basic:기존방식3-별도의 조립기 클래스를 활용한 객체 생성
+O4container:컨테이너(bean관리)
+O5constructor:생성자인젝션
+O6setter:set메소드인젝션
+quiz:연습
+O7collection:list,set,map,prop
+O8multi:다중파일설정(xml import)
+O9autowired:멤버변수를 통한 자동 주입 방법
+
+-----------------
+day60 - Spring -> DI
+OAresource:@Resource
+OBcomponentScan:component-scan
+12_paging:페이징
+
+-----------------
+day61 - Spring -> AOP, MVC
+13_spring-aop._01_basic:기존 OOP방식 사용 코드 test
+_02_basic:핵심 기능만 남겨두고 공통 기능을 한 곳에 모으기
+_03_basic:공통기능을 처리할 수 있는 ProxyController 생성(이걸 자동으로 만들어주는게 spring-aop)
+_04_schema:spring-aop적용-스키마 방식
+_05_anno:spring-aop적용-어노테이션 방식
+14_spring-mvc.hello
+@RequestMapping
+Form데이터처리
+
+-----------------
+day62 - Spring -> MVC
+@ResponseBody
+@RestController
+파일업로드
+인터셉터
+@PathVariable

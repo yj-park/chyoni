@@ -1,0 +1,64 @@
+<!-- 
+	select 
+	
+	
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../00_common/validUtil.js"></script>
+</head>
+<body>
+	<form name="mForm" onsubmit="return chkForm();"> <!-- form이 submit될때 자동으로 호출되는 함수 action이 없으면 자기 자신 페이지로 보내줌(ex:검색 페이지)-->
+		<select name="searchType">
+			<option value="">선택하세요</option>
+			<option value="writer">글쓴이</option>
+			<option value="title">제목</option>
+		</select>
+		<input type="text" name="searchWord" />
+		<button>검색</button>
+		<button type="button" onclick="changeDisabled(false);">활성화</button>
+		<button type="button" onclick="changeDisabled(true);">비활성화</button>
+	</form>
+	
+	<script>
+		function changeDisabled(disabledVal) {
+			var sObj = document.mForm.searchType;
+			// 비활성화 버튼 누르면 선택하세요로 바꾸자
+			sObj.selectedIndex = 0;
+			sObj.disabled = disabledVal;
+		}
+	
+	
+		function chkForm() {
+			// select box 객체 얻기
+			var sObj = document.mForm.searchType;
+// 			console.dir(sObj); // select box 객체
+//			console.log(sObj.options.length); // select box의 정보가 options라는 배열에 담겨있음. 즉 option 항목의 개수
+//			console.log(sObj.options[0]); // select box의 0번째에 접근 
+			console.log(sObj.options[sObj.selectedIndex]); //현재 select box의 옵션 중 선택된 항목의 인덱스 위치에 접근 
+			console.log(sObj.options[sObj.selectedIndex].value); //현재 select box의 옵션 중 선택되어진 인덱스의 위치에 접근하여 value 속성값 가져오기 
+			
+			// select box의 옵션 항목이 글쓴이나 또는 제목을 선택하고 searchWord에 값을 입력하지 않고 검색 버튼을 누를 경우 "검색어를 입력하세요" 경고창을 띄운다.
+			/* if (sObj.options[sObj.selectedIndex].value == "writer" || sObj.options[sObj.selectedIndex].value == "title" ) {
+				   if (document.mForm.searchWord.value == "") {
+					   alert("검색어를 입력하세요");
+					   document.mForm.searchWord.focus();
+					   return false;
+				   }
+			   }
+			*/
+			
+			if (sObj.selectedIndex != 0) {
+				if (isEmpty(document.mForm.searchWord, "검색어를 입력하세요")) {
+					return false;
+				}
+			} 
+			
+			return false;
+		}
+	</script>
+</body>
+</html>

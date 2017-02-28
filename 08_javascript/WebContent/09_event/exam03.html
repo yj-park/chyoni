@@ -1,0 +1,65 @@
+<!-- 
+	----------------------------------------------------
+	표준 이벤트 모델 : 하나의 이벤트 방식에 여러 개의 리스너 등록 가능
+	
+	<button>클릭</button>
+	var btn = document.querySelector("button");
+	btn.addEventListener(이벤트 타입, 콜백함수(이벤트 리스너), 전파여부);
+	
+	btn.addEventListener("click", test, true/false);
+	
+	function test() {} // 
+	----------------------------------------------------
+	고전 이벤트 모델 : 덮어쓰기
+	
+	<button>클릭</button>
+	var btn = document.querySelector("button");
+	btn.onclick = test;
+	function test() {};   
+	----------------------------------------------------
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	button {
+		width: 200px;
+		height: 100px;
+		color: white;
+		background: tomato;
+		border: 2px solid black;
+		font-size: 25px;
+	}
+</style>
+</head>
+<body>
+	
+	<button id="btn1">시작</button>
+	<button id="btn2">종료</button>
+	
+	<script>
+		var btns = document.querySelectorAll("button");
+		for (var i = 0; i < btns.length; i++) {
+			btns[i].addEventListener("click", function (e) {
+				var obj = e.target;
+			//	이벤트 대상 객체 얻기
+				console.log(obj.innerHTML);
+			//	이벤트 대상 객체의 좌표 얻기
+				console.log(obj.offsetLeft, obj.offsetTop);
+			//	이벤트가 발생한 좌표와 대상 객체와의 좌표 간 차이 (거리 구하기 가능)
+				console.log(e.offsetX, e.offsetY);
+			//  웹브라우저와의 거리
+				console.log(e.clientX, e.clientY);
+			//  스크린과의 거리
+				console.log(e.screenX, e.screenY) ;
+			});
+		}
+	</script>
+	
+</head>
+
+</body>
+</html>

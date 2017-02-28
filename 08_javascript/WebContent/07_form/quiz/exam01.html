@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../00_common/validUtil.js"></script>
+</head>
+<body>
+	<form name="mForm" onsubmit="return doAction();">
+		이름 <input type="text" name="name"/> <br>
+		아이디 <input type="text" name="id"/> <br>
+		비밀번호 <input type="password" name="password"/> 비밀번호확인 <input type="password" name="password2"/> <br>
+		경력여부 
+		<input type="checkbox" id="career1" name="career" value="1" onclick="changeDisabled(false);" />
+		<label for="career1">신입</label>
+		<input type="checkbox" id="career2" name="career" value="2" checked onclick="changeDisabled(true);"/>
+		<label for="career2">경력</label> 
+			<select name="choiceCar">
+				<option value="">선택</option>
+				<option value="car1">3개월미만</option>
+				<option value="car2">3개월이상</option>
+				<option value="car3">6개월이상</option>
+				<option value="car4">1년이상</option>
+				<option value="car5">2년이상</option>
+				<option value="car6">3년이상</option>
+			</select><br>
+		이메일 <input type="text" name="email"/> 
+			 <input type="checkbox" id="getMail" name="getMail" checked ><label for="getMail" >메일수신</label><br>
+		<button type="button" onclick="doAction();">확인</button>
+	</form>
+	
+	<script>
+		function doAction() {
+			var f = document.mForm;
+			
+			if (isEmpty(f.name, "이름을 입력하세요")) 
+				return false;
+			
+			if (isEmpty(f.id, "아이디를 입력하세요")) 
+				return false;
+			
+			if (f.id.value.length < 4 || f.id.value.length > 8) {
+				alert("아이디는 4자 이상 8자 이하이어야 합니다");
+				f.id.focus();
+				f.id.select();
+				return false;
+			}
+			
+			if (isEmpty(f.password, "비밀번호를 입력하세요")) 
+				return false;
+			
+			if (isEmpty(f.password2, "비밀번호를 확인하세요")) 
+				return false;
+			
+			if (f.password.value != f.password2.value) {
+				alert("비밀번호가 일치하지 않습니다");
+				f.password.focus();
+				f.password.select();
+				return false;
+			}
+			
+
+			var cObj = document.querySelector("#career2");
+			console.log(cObj.checked);
+			console.log(f.choiceCar.selectedIndex);
+				
+			if (cObj.checked) {
+				if (f.choiceCar.selectedIndex == 0) {
+					alert ("경력 체크 시 경력을 선택하세요");
+					f.choiceCar.focus();
+					return false;
+				}
+			}
+			
+			if (f.getMail.checked) {
+				if (isEmpty(f.getMail, "메일 수신 체크 시 이메일을 입력하세요"))
+				return false;
+			}
+			
+			alert("모두 성공");
+			return true;
+		}
+		
+		function changeDisabled(disabledVal) {
+			var cObj = document.querySelector("#career2");
+			
+			if (cObj.checked == false) {
+				document.mForm.choiceCar.selectedIndex = 0;
+				cObj.disabled = disabledVal;
+			}
+		}
+	
+	</script>
+</body>
+</html>

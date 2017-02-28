@@ -1,0 +1,35 @@
+<!-- 
+   ui 위에 중첩되어 만들 수 있는 것 -> layer 
+    엘리먼트 위치 지정하기
+    position 속성의 값을 지정
+    absolute 절대좌표 지정시 사용함 / 부모를 기준으로. 부모가 static이면 안됨 -> body를 기준으로 / 
+    relative 현재 자리를 기준으로
+    fixed는 무조건 바디 기준
+    static 기본. left,top좌표를 설정해도 값 반영 X
+ -->
+<html>
+<head>
+<title> position </title>
+<meta charset="utf-8" />
+<style type="text/css">
+	#abs1, #abs2, #abs3 {
+		width: 100px; height:100px;
+		border: 1px solid tamato;
+		position: absolute;
+	}
+	#abs1 {background: skyblue;}
+	#abs2 {background: #345;}
+	#abs3 {background: #a12b12;}
+	
+</style>
+<body>
+    <h1>위</h1>
+    <div>
+        <div id="abs1"></div>
+        <div id="abs2"></div>
+        <div id="abs3"></div>
+    </div>
+    <h1>아래</h1>
+</body>
+</html>
+

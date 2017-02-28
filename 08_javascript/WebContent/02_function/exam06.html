@@ -1,0 +1,28 @@
+<!--
+	내부함수(ajax때 사용 & library에 많이 사용되므로 해석이 가능할 정도만 공부해)
+	
+	- 함수 내에 포함된 함수
+	- 선언된 외부함수 내에서만 호출이 가능 
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function outerFunc() {
+		function innerFunc() {
+			console.log("내부 함수 호출됨..");
+		}
+		innerFunc();
+	}
+	
+	outerFunc();
+ </script>
+
+</head>
+<body>
+
+</body>
+</html>

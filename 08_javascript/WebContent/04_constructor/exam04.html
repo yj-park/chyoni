@@ -1,0 +1,47 @@
+<!-- 
+	내부함수에서의 this
+	
+	(스코프체인을 이용한 편법?ㅋㅋ)
+	
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+	/*
+		var msg = "전역";
+		var obj = {
+			msg : "obj",
+			func1: function () {
+				console.log("func1", this.msg);     // obj로 ㄱㄱ
+				function func2() {
+					console.log("func2", this.msg); // 함수명앞에 아무것도 없으니까 window로 ㄱㄱ
+				}
+				func2();
+			}
+		};
+		
+		obj.func1();
+	*/	
+		var msg = "전역";
+		var obj = {
+			msg : "obj",
+			func1: function () {
+				var that = this;
+				console.log("func1", this.msg);     
+				function func2() {
+					console.log("func2", this.msg);     // this를 임시변수에 담아두고 접근하여 사용 (스코프체인)
+				}
+				func2();
+			}
+		};
+		
+		obj.func1();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

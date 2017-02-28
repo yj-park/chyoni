@@ -1,0 +1,84 @@
+<!-- 
+	add : 확장 집합 추가
+	children( ) : 모든 자식
+	children("span") : 자식 중 span 만 선택
+	end() : 이전 확장 집합
+	filter("선택자") : 현재 집합에서 일부집합 추출
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>add, child, end, filter</title>
+<style type="text/css">
+	div {
+		width: 60px;
+		height: 60px;
+		margin: 10px;
+		float:left;
+		font-size: 30px;
+		font-weight:bold;
+	}
+	p {
+		clear: left;
+		font-weight:bold;
+		font-size: 30px;
+		margin:20px 10px;
+	}
+	input[type=button] {
+		font-size: 20px;
+		font-weight: bold;
+		width: 150px;
+		height: 40px;
+	}
+</style>
+<script src="../js/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<div>div<span>1</span></div>
+	<div>div<span>2</span></div>
+	<div>div<span>3</span></div>
+	<div>div<span>4</span></div>
+	<div>div<span>5</span></div>
+	<div>div<span>6</span></div>
+	
+	<p>add, child, end, filter</p>
+	
+	<button>add()</button>
+	<button>child()</button>
+	<button>end()</button>
+	<button>filter()</button>
+		
+	<script>
+		$("button:eq(0)").on("click", function () {
+//			$("div").css("background", "yellow");
+//			$("div, p").css("color", "tomato");
+			
+			// div에 p추가 집합체에 추구할 수 있는 
+			$("div").css("background", "yellow")
+					.add("p")
+					.css("color", "tomato");
+		});
+		
+		// 확장 집합체 중 자식만 선택
+		$("button:eq(1)").on("click", function () {
+			$("div").css("background", "yellow")
+					.children("span")
+					.css("color", "tomato");
+		});
+		
+		// body의 모든 자식
+		$("button:eq(2)").on("click", function () {
+			console.log($("body").children().length);
+			console.log($("body").children().children("span").length);
+			// 현재 확장 집합 이전 집합으로 이동할 수 있는 방법 -> end()
+			console.log($("body").children().children("span").end().length);
+		});
+		
+		$("button:eq(3)").on("click", function () {
+			// gt(0): 0번째보다 큰 거/ 현재 집합에서 특정 집합으로 축약시켜주는 역할->filter
+			$("div").css("background", "yellow").filter(":gt(0)").css("color", "tomato");
+		});
+	</script>		
+</body>
+</html>

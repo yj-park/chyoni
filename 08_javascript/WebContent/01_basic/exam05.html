@@ -1,0 +1,39 @@
+<!-- 
+	자바스크립트 호이스팅
+	자바스크립트 엔진이 스크립트를 해석하는 단계는 
+	컴파일과 실행 단계 -> 두 단계에 걸쳐서 진행한다.(메모리상)
+	
+	컴파일시 변수와 함수(자바의 메소드 개념)에 대한 정보를 먼저 설정한다.
+	따라서, 변수 또는 함수를 선언하기 전에 사용이 가능하다.
+ -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	console.log(id);
+
+	var id = "테스터";
+	console.log(id);
+	
+	// 변수나 함수를 제일 위쪽으로 끌어올리는 작업 -> 호이스팅 (실행하기전 컴파일 시점에 먼저 스크립트를 쭉 훑어보는 것, 변수나 함수에 대한 선언이 있나 체크. 값을 대입하는 건 실행 시 이루어짐)
+
+	/*
+	호이스팅 
+	
+	var id; -> undefined가 출력
+	
+	console.log(id);
+
+	id = "테스터"; -> 변수 선언은 빠지고 변수에 값만 대입하는 과정
+	console.log(id);
+	*/
+</script>
+</head>
+<body>
+
+</body>
+</html>

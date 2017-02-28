@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context   
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<context:component-scan base-package="kr.co.mlec" />
+	<!-- mvc와 연관된 bean클래스를 쉽게 쓸 수 있는 이유는 바로 이 두 줄 덕분! -->
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>text/html; charset=UTF-8</value>
+					</list>
+				</property>
+			</bean>
+			<!-- 객체를 json으로 바꿔주는 역할을 함! gson과 비슷한 역할 -->
+			<bean
+				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>text/html; charset=UTF-8</value>
+						<value>application/json; charset=UTF-8</value>
+					</list>
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/interceptor/**" />
+			<!-- 인터셉터 동작을 막기 위한 페이지도 설정 -->
+			<mvc:exclude-mapping path="/interceptor/login*.do" />
+			<bean class="kr.co.mlec.interceptor.AuthInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 최대 업로드 파일 사이즈 : 10MB -->
+		<property name="maxUploadSize" value="10485760" />
+	</bean>
+
+	<!-- 별도의 기능 없이 페이지 이동만 필요할 때 사용 -->
+	<mvc:view-controller path="/file/uploadForm.do"
+		view-name="file/fileUploadForm" />
+		
+
+	<mvc:default-servlet-handler />
+	<mvc:view-resolvers>
+		<!-- Controller가 찾는 페이지 앞,뒤에 자동으로 붙는 것. jsp를 관리하는 곳,서버에서만 접근 가능한 경로 url로 
+			직접 접근 불가능한 곳이 WEB-INF야 보안! -->
+		<mvc:jsp prefix="/WEB-INF/jsp/" suffix=".jsp" />
+	</mvc:view-resolvers>
+</beans>

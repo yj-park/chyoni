@@ -1,0 +1,34 @@
+<!-- 
+visibility: hidden은 영역은 차지하고 있으나 사라짐 
+display: none은 영역도 모두 사라짐
+-->
+
+
+<html>
+<head>
+<meta charset="utf-8" />
+<style type="text/css">
+	#container1 { display: none; }
+	#container2 { display: block; }
+	#container3 { visibility: hidden; }
+	#container4 { visibility: visible; }
+</style>
+</head>
+<body>
+    <p>display</p>
+	<div id="container1">
+	   <img alt="누구?" width="318" height="237" src="../images/pic1.jpg" />
+	</div>
+	<div id="container2">
+	   <img alt="누구?" width="318" height="237" src="../images/pic2.jpg" />
+	</div>
+	
+    <p>visibility</p>
+    <div id="container3">
+       <img alt="누구?" width="318" height="237" src="../images/pic1.jpg" />
+    </div>
+    <div id="container4">
+       <img alt="누구?" width="318" height="237" src="../images/pic2.jpg" />
+    </div>
+</body>
+</html>

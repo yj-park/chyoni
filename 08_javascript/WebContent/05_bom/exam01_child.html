@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	메세지 : <input type="text" id="msg" />
+	<button onclick="winClose();">닫기</button>
+	
+	<script>
+		function winClose() {
+			var msgObj = document.querySelector("#msg"); // id가 msg인 엘리먼트 얻기
+			var msg = msgObj.value; // msgObj 입력창에 입력된 텍스트 가져오기
+			
+			// 부모창의 doResult() 함수에 msg 넘기기
+			opener.doResult(msg);
+			
+			// 현재 페이지를 닫기
+			self.close();
+		};
+	</script>
+	
+</body>
+</html>

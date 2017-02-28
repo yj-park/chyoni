@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<button type="button" onclick="showTime()" >시작</button>
+<button type="button" onclick="clearTime()" >정지</button>
+<h1 id="time"></h1>
+
+<script>
+	
+	var time;
+	
+	function showTime() {
+		var h1Obj = document.querySelector("#time");
+		var date = new Date();
+		
+		h1Obj.innerHTML = date.toLocaleTimeString();
+		time = setTimeout(showTime, 1000);
+	}
+	
+	function clearTime() {
+		clearTimeout(time);
+	}
+</script>
+
+</body>
+</html>

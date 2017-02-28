@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div {
+	position: absolute;
+	background-color: #000;
+	color: #fff;
+	padding: 10px;
+	font-size: 40px;
+	font-weight: bold;
+	width: 600px;
+	height: 400px;
+	left: 200px;
+	top: -420px;
+}
+#d1 {
+	background-color: orange;
+}
+</style>
+<script>
+var x = -400;
+function showSlide() {
+	x += 30;
+	var obj = document.querySelector("#d1");
+	obj.style.top = x + "px";
+	if (x < 100) {
+		setTimeout(showSlide, 100);
+	} else {
+		x = -400;
+	}
+}
+</script>
+</head>
+<body>
+	<p><a href="#" onclick="showSlide()">슬라이드</a></p>
+	<div id="d1">자바스크립트</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

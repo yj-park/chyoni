@@ -1,0 +1,54 @@
+<!-- 
+	엘리먼트에 속성 추가하기 (DOM API)
+	
+ 	ex)
+ 	<img src="" />
+	// <img /> 모양 생성
+	var imgObj = document.createElement("img");
+	
+	엘리먼트.setAttribult(속성,값);
+	DOM API를 사용하면 (기존 태그에 없는) 사용자가 정의하는 속성을 추가할 수 있다.
+	
+	
+	사용자 정의 속성을 만들 경우에는
+	data-속성명
+	ex)date-msg 
+	
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="doAdd();">추가</button>
+	<div id="list"></div>
+	<script>
+		function doAdd() {
+			// img 엘리먼트를 생성 후 id가 list인 엘리먼트에 자식으로 추가
+			// 생성되는 img 엘리먼트의 src 속성으로 pic4.jpg 추가
+			// 넓이(200), 높이(150)으로 설정
+			
+			var list = document.querySelector("#list");
+			// <img>생성
+			var imgObj = document.createElement("img");
+			
+			// <img src="pic4.jpg", width="200", height="150">
+			imgObj.setAttribute("src","pic4.jpg")
+			imgObj.setAttribute("width", 200);
+			imgObj.setAttribute("height", 150;
+			
+			// 사용자 정의 속성 설정 : 설정되지 않는다
+			imgObj.setAttribute("data-msg", "test");
+			
+			// 생성된 imgObj 엘리먼트를 list의 자식으로 추가하기
+			list.appendChild(imgObj);
+			
+			
+		}
+	</script>
+	
+</body>
+</html>

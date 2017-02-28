@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		function openPop() {
+			var left = (screen.width - 400) / 2;
+			var top = (screen.height - 300) / 2;
+			
+			window.open("exam02_child.html", "pop1", "top=" + top + ", left=" + left + ", width=400, height=300");
+		}
+		
+		function doResult(msg) {
+			var h1Obj = document.querySelector("#result");
+			h1Obj.innerHTML = msg;
+		}
+	</script>
+	
+	<button onclick="openPop()">계산</button>
+	<h1 id="result"></h1>
+</body>
+</html>

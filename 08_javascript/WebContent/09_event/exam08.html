@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	p {
+		font-size: 20px;
+		font-weight: bold;
+		height: 40px;
+		background: tomato;
+		color: white;
+		text-align: center;
+		line-height: 40px; 
+	}
+	
+	div {
+		height: 700px;
+		background: yellow;
+		font-size: 20px;
+		overflow: auto;
+	}
+</style>
+
+</head>
+<body>
+	<p>마우스 이벤트 연습</p>
+	<div></div>
+	
+	<script>
+		var pObj = document.querySelector("p");   // 실제 이벤트 
+		var dObj = document.querySelector("div");
+		
+		pObj.addEventListener("mousedown", function() {
+			dObj.innerHTML = "마우스가 눌렸습니다<br>" + dObj.innerHTML; 
+		});
+		pObj.addEventListener("mouseup", function() {
+			dObj.innerHTML = "마우스가 떼어졌습니다<br>" + dObj.innerHTML; 
+		});
+		pObj.addEventListener("mousemove", function(e) { 
+								//e라는 객체의 정보를 주어야 좌표를 얻어올 수 있어
+			var obj = e.target; // 이벤트가 발생한 대상 객체를 나타냄
+			var left = obj.offsetLeft;
+			var top = obj.offsetTop;
+		
+			dObj.innerHTML = "left: " + left + ", " 
+		 				   + "top: " + top + ", " 
+		 				   + "clientX: " + e.clientX + ", " 
+		 				   + "clientY: " + e.clientY + ", " 
+						   + "<br>" + dObj.innerHTML; 
+						   // p의 위치는 고정되어있지!
+		});
+		
+		
+	</script>
+</body>
+</html>

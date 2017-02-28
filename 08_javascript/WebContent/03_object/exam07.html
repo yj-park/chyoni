@@ -1,0 +1,27 @@
+<!-- 
+	객체와 함수의 차이
+	
+	객체: 모든 객체들은 부모의 prototype을 가리키는 __proto__를 가지고 있다
+	함수: 모든 객체들은 부모의 prototype을 가리키는 __proto__를 가지고 있다
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+	var member = {name : "홍길동"};
+	console.dir(member);
+	
+	function member1() {
+		this.name = "홍길동";
+	}
+	console.dir(member1);
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

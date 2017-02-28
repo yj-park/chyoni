@@ -1,0 +1,42 @@
+<!-- 
+	이벤트 - 특정 동작 또는 상황에서 발생
+	
+	강제로 이벤트 발생시키기 
+	-> 객체.이벤트타입();
+	
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	button {
+		width: 200px;
+		height: 100px;
+		color: white;
+		background: tomato;
+		border: 2px solid black;
+		font-size: 25px;
+	}
+	div { font-size: 25px; }
+</style>
+</head>
+<body>
+	<button>클릭</button>
+	<div>0</div>
+	
+	<script>
+		var div = document.querySelector("div");
+		var btn = document.querySelector("button");
+		btn.addEventListener("click", function () {
+			div.innerHTML = parseInt(div.innerHTML) + 1; 
+		});
+		
+		setInterval(function () {
+			// 버튼 클릭 액션 (자동 클릭)
+			btn.click();
+		}, 500);
+	</script>
+</body>
+</html>

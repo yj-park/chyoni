@@ -1,0 +1,97 @@
+<!--
+	자바스크립트 생성자
+	
+	- 일반 함수
+	- 함수의 이름을 대문자로 설정함(선택적)
+	  : Date, Number, Function, Object ...
+	- 함수에 클래스의 역할을 부여
+	- new와 함께 사용
+	- 생성자 함수 내에서 this는 생성된 객체 자체를 나타낸다.
+	- 만약, new와 함께 사용하지 않았다면 생성자 함수 역할을 할 수 없다.
+	   이때의 함수 내의 this는 window 객체를 가리킨다.  
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	/*
+	function member(id, name, age) {
+		return {id: id, name: name, age: age};
+	}
+	*/
+	// 생성자는 함수명을 대문자로 쓰는 게 좋다, new와 함께 사용함 -> 객체를 반환(new가 없으면 undefined) 
+	function Member (id, name, age) {
+		// this는 새롭게 생성된 객체를 호출함
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		// 멤버 객체의 prototype공간에 옮겨줘
+		/*
+		this.info = function () {
+			console.log(this.id, this.name, this.age);
+			// 함수 내의 this는 호출하는 객체의 영향을 받음
+		};
+		*/
+	}
+		// Member.prototype의 공간을 내가 조작하는 것!!
+		
+		Member.prototype = {
+			info: function () {
+				console.log("###", this.id, this.name, this.age);
+			}
+			setId: function (id) {
+				this.id = id;
+			}
+			getId = function () {
+				return this.id;
+			}
+		}
+	
+	
+		/*
+		Member.prototype.info = function () {
+			console.log("###", this.id, this.name, this.age);
+		};
+		Member.prototype.setId = function (id) {
+			this.id = id;
+		};
+		Member.prototype.getId = function () {
+			return this.id;
+		};
+		*/
+		
+	
+	// new 없이 쓰이면 this가 호출하는 건 window, return없으면 못써
+	// new를 사용하면 새롭게 생성된 객체를 호출하고, return 없이도 사용 가능
+	var m1 = new Member("kim", "김호", 22);
+	m1.info = function () {
+		console.log("@@@@", this.id, this.name, this.age);
+	}; 
+	
+	
+	m1.info();
+	m1.setId("lee");
+	m1.info();
+	/*
+	console.log(m1.id);
+	console.log(m1.name);
+	console.log(m1.age);
+	*/
+
+	var m2 = new Member("park", "박호", 33);
+	m2.info();
+	/*
+	console.log(m2.id);
+	console.log(m2.name);
+	console.log(m2.age);
+	*/
+</script>
+</head>
+<body>
+
+</body>
+</html>

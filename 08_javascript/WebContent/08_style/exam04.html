@@ -1,0 +1,102 @@
+<!-- 
+	position이 absolute, fixed일 경우만 clip 속성이 동작됨.
+	clip: rect(top, right, bottom, left) 시계 방향
+	전체 영역 중 특정 영역만 보여주고 싶어! 그 특정 영역을 정하는 방법이라고 할 수 있지
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	h3, div {
+		margin: 0px;
+		padding: 5px;
+		width: 500px;
+		border: 2px solid #334455;
+		box-sizing: border-box;
+	}
+	
+	h3 {
+		background-color: #8899aa;
+		
+	}
+	
+	div {
+		position: absolute;
+		height: 160px;
+		clip: rect(0px, 500px, 160px, 0px);
+	}
+	.show {
+		opacity: 1;
+			clip: rect(0px, 500px, 160px, 0px);
+	}
+	.hidden {
+			clip: rect(0px, 500px, 0px, 0px);
+	}
+	
+</style>
+</head>
+<body>
+	<h2>어코디언 기능 구현</h2>
+	<h3 onclick="doAction();">오늘은 자바스크립트 CSS</h3>
+	<div class="hidden">
+		오늘은 자바스크립트 CSS 적용하는 날<br>
+		오늘은 자바스크립트 CSS 적용하는 날<br>
+		오늘은 자바스크립트 CSS 적용하는 날
+	</div>
+	<script>
+	var bottom = 160;
+	var divObj = document.querySelector("div");
+	var id;
+	function doAction() {
+		if (bottom == 0) {
+			id = setInterval(function () {
+				bottom += 16;
+				divObj.style.clip = "rect(0px, 500px, " + bottom + "px, 0px)";
+			    if   (bottom == 160) clearInterval(id);
+			}, 100);
+		} else {
+			id = setInterval(function () {
+				bottom -= 16;
+				divObj.style.clip = "rect(0px, 500px, " + bottom + "px, 0px)";
+			    if   (bottom == 0) clearInterval(id);
+			}, 100);
+		}
+	}
+	
+	/*
+	function doAction() {
+		var divObj = document.querySelector("div");
+		console.log(divObj.className);
+		if (divObj.className == "hidden") {
+			divObj.className = "show";
+		} else {
+			divObj.className = "hidden";
+		}
+	}
+	*/
+	
+		/*
+		function doAction() {
+			if (bottom == 0) return;
+			setTimeout(function () {
+				bottom -= 2;
+				divObj.style.clip = "rect(0px, 500px," + bottom + "px, 0px)";
+				
+				doAction();
+			}, 100);
+		}
+		*/
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

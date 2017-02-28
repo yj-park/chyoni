@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function calClosure(num1, num2) {
+		return function (cal) {
+			switch (cal) {
+			case "+": return num1 + num2;
+			case "-": return num1 - num2;
+			case "*": return num1 * num2;
+			case "/": return num1 / num2;
+			};
+		};
+	};
+
+
+	var cal = calClosure(10, 5);
+	// calClosure라는 콜백 함수 만들기
+	console.log(cal("+")); // 15 
+	console.log(cal("-")); // 5
+	console.log(cal("*")); // 50
+	console.log(cal("/")); // 2
+</script>
+</head>
+<body>
+
+</body>
+</html>

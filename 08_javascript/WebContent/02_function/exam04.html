@@ -1,0 +1,37 @@
+<!-- 
+	함수의 매개변수 처리
+	
+	arguments : 함수의 매개변수를 포함하고 있는 함수 내부의 property
+			    (유사배열객체:length property 포함)
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		function argsFunc() {
+			console.log("=================================");
+			console.log("arguments.length", arguments.length); 
+			// 실제 호출되는 매개변수에 따라 달라짐
+			// 객체 접근
+			// 1. for in root
+			for (var key in arguments) {
+				console.log("key", key, "value", arguments[key]);
+			}
+			console.log("-----------------------------")
+			// 2. 배열 접근
+			for (var i = 0; i < arguments.length; i++) {
+				console.log("key", i, "value", arguments[i]);
+			}
+		}
+		argsFunc();                    
+		argsFunc(1);
+		argsFunc(1, 2, 3);
+		// 매개변수에 상관없이 이름만 같으면 함수 호출 가능
+	</script>
+</body>
+</html>

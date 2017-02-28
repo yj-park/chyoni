@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../framework-t.js"></script>
+</head>
+<body>
+	<h1>XML 데이터 처리</h1>
+	<hr>
+	<div id="result">Ajax 실행 결과 표시</div>
+	
+	<button id="clearBtn">초기화</button>
+	<button id="send">호출</button>
+	
+	<script>
+		$("#clearBtn").on("click", function () {
+			$("#result").html("");
+		});
+		
+		$("#send").on("click", function () {
+			var xhr = new XMLHttpRequest();
+			
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4) {
+					if (xhr.status == 200) {
+						var result = xhr.responseXML;
+						// 출력하고싶은 정보는 name과 age! 그래서 그 정보를 가지고 있는 member에 접근할게. tagname이 member란 태그들의 엘리먼트를 꺼낼게. 배열로 넘어온다
+						// mList는 member 객체들의 모임
+						var mList = result.getElementsByTagName("member");
+						var html = "";
+						for (var i = 0; i < mList.length; i++) {
+							var member = mList[i];
+							// member안에서 tag 이름이 name인거 . 배열이니까 값은 0번째
+							var name = member.getElementsByTagName("name")[0].firstChild.nodeValue;
+							var age = member.getElementsByTagName("age")[0].firstChild.nodeValue;
+							html += "이름 : " + name +  ",나이 : " + age + "<br>";
+						}
+						
+						$("#result").html(html);
+					}
+				}
+			};
+			// 파라미터값 보내기
+			xhr.open("GET", "exam05", true);
+			xhr.send(null);
+			
+		});
+	</script>
+	
+<!--post일때 필수  
+	<form enctype="application/x-www-form-urlencoded"></form>
+--> 
+</body>
+</html>

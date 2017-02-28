@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="doAction(1);">태그 선택자</button>
+	<button onclick="doAction(2);">아이디 선택자</button>
+	<button onclick="doAction(3);">클래스 선택자</button>
+	
+	<div>TEST1</div>
+	<div id="a">TEST2</div>
+	<div class="b">TEST3</div>
+	
+	<script>
+		function doAction(comm) {
+			var obj;
+			switch (comm) {
+			case 1: 
+				obj = document.querySelector("div"); // div 중 최초로 찾은 div! 조건에 맞는 것 하나
+				break;
+			case 2: 
+				obj = document.querySelector("#a");
+				break;
+			case 3: 
+				obj = document.querySelector(".b");
+				break;
+			}
+			alert(obj.innerHTML);
+		}
+	</script>
+</body>
+</html>

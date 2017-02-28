@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var scope = "전역";
+	function func() {
+		console.log(scope);
+		var scope = "지역";
+		
+		for (var i = 1; i < 10; i++) {
+			console.log("a");
+		}
+		console.log(i);
+
+	}
+	
+	func();
+	
+	/*
+	함수의 scope chain
+	실행 컨텍스트가 만들어짐 (window영역)
+	함수가 실행될때마다 관련된 실행컨텍스트가 만들어짐
+	window의 scope:전역
+	그리고 이 컨텍스트 안에 func이라는 컨텍스트가 만들어짐
+	func의 scope:지역
+	그 안에 inner라는 컨텍스트가 만들어지고 scope가 없으면
+	그 부모의 func의 scope를 불러옴
+	자바스크립트 완벽 가이드 책(1,2권) / 인사이드 자바스크립트 책, you don't know JS series 추천!
+	*/
+	
+	/*
+	호이스팅
+	var scope;
+	console.log(scope);
+	scope = "지역";
+	*/
+</script>
+</head>
+<body>
+
+</body>
+</html>

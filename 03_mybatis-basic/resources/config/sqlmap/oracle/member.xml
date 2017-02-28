@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.mlec.member.dao.MemberMapper">
+    <!-- id는 sql문을 구분하는 역할 -->
+    <select id="getMemberInfo1" parameterType="string" resultType="member">
+    <!-- parameterType: sql을 수행하는데 필요한 값을 받아줌 -->
+    <!-- resultType: 결과값을 " "형태로 넘겨주겠다-->
+    	select id, 
+    	       name,
+    	       email,
+    	       addr
+    	  from mybatis_member
+    	 where id = #{id}
+    </select> 
+    
+    <!-- ;은 필요없어. #{}:PreparedStatement의 ? 역할, 
+    {}안의 값은 parameterType의 값이 하나만 들어온다면 하나만 주면되므로 뭘 적어도 상관없지만 
+      여러개인 경우 {}안에는 보통 컬럼명과 동일하게 쓴다. -->
+    <select id="getMemberInfo2" parameterType="member" resultType="member">
+    	select id, 
+    	       name,
+    	       email,
+    	       addr
+    	  from mybatis_member
+    	 where name = #{name}
+    	   and email = #{email}
+    </select> 
+    
+    <select id="getMemberInfo3" parameterType="string" resultType="string">
+    	select id 
+    	  from mybatis_member
+    	 where name = #{name}
+    </select> 
+    
+    <select id="getMemberInfo4" resultType="int">
+    	select count(*) 
+    	  from mybatis_member
+    </select> 
+    
+    <!-- 여러 행의 데이터 처리 연습 -->
+    <!-- list가 받아주는 타입이 resultType -->
+    <select id="getMemberList1" resultType="member">
+         	select id, 
+    	       name,
+    	       email,
+    	       addr,
+    	       join_date as joinDate
+    	  from mybatis_member
+    	  order by id
+    <!-- 같은 이름을 찾아서 MemberVO로 주기 때문에 join_date와 java의 JoinDate와 매칭을 할 수 없어서 null값 출력됨-->
+    <!-- 해결법 1: sql문에 alias줘서 이름 같아지게 해주기 -->
+    </select> 
+    
+    <!-- 해결법 2: 전자정부프레임워크  -->
+    <resultMap id="memberMap" type="member">
+    <!-- type은 만들고자하는 결과의 데이터타입 
+        select절 수행 결과 중 id(column)는 MemberVO의 id(property)와 매핑 -->
+    	<result property="id" column="id" />
+    	<result property="name" column="name" />
+    	<result property="email" column="email" />
+    	<result property="addr" column="addr" />
+    	<result property="joinDate" column="join_date" />
+    </resultMap>
+    
+    <select id="getMemberList2" resultMap="memberMap">
+         	select *
+    	  from mybatis_member
+    	  order by id
+    </select> 
+    
+    <!-- insert는 resultType이 없다 -->
+    <insert id="insertMember" parameterType="member">
+		insert into mybatis_member (
+		    id,
+		    name,
+		    email,
+		    addr
+		) values (
+		  #{id},
+		  #{name},
+		  #{email},
+		  #{addr}
+		)    
+    </insert>
+    
+    <update id="updateMember" parameterType="member">
+    	update mybatis_member
+    	   set addr = #{addr}
+    	 where id = #{id}
+    </update>
+    
+    <delete id="deleteMember" parameterType="string">
+    	delete 
+    	  from mybatis_member
+    	 where id = #{id}
+    </delete>
+    
+    <select id="getMemberIteratorList" parameterType="member" resultMap="memberMap">
+    	select *
+    	  from mybatis_member
+      	 where name = #{name}
+      	   <!-- and addr in ('seoul', 'pusan')을 만들기 위한 foreach -->
+      	   and addr in <foreach item="addr" collection="addrs" 
+      	                        open="(" close=")" separator=",">
+      	   				   #{addr}
+      	   			   </foreach>
+      	   <!-- item:임시변수! for(String addr: addrs)문의 addr은 item, collection은 addrs의 역할-->
+    </select>
+    
+    
+    <!-- 공통의 코드 부분을 활용할 수 있는 include (sql문의 조건 개수가 항상 같아야 하는 경우 사용) --> 
+    <sql id="commonMember">
+         from mybatis_member
+    	where name like '%' || #{name} || '%'
+    	  and email like '%' || #{email} || '%'
+    </sql>
+    
+    
+    <select id="getMemberIncludeList" parameterType="member" resultMap="memberMap">
+    	select *
+    	<include refid="commonMember"/>
+    </select>
+      	 <!-- where name like '%'||'s'||'%'--> 
+      	 <!-- 게시판 검색 기능 시 필수템(프로젝트에서 꼭 써) rowNum을 통해서 한 화면에 보여줄 수 있는 것 표시 -->
+    
+    <select id="getMemberIncludeListCount" parameterType="member" resultType="int">
+    	select count(*)
+    	<include refid="commonMember"/>
+    </select>
+    
+    <select id="getMemberDynamicList1" parameterType="member" resultMap="memberMap">
+      	 <!-- where 조건의 상황이 동적인 경우 (즉, id나 name 둘 중 하나가 없거나, 둘 다 있는 경우 등) if문 사용-->
+		select *
+		  from mybatis_member
+		  <where>
+			 <if test="id != null">
+			   id like '%' || #{id} || '%'
+		     </if>
+		     <if test="name != null">
+			   and name like '%' || #{name} || '%'
+		     </if>
+	      </where>
+     </select>
+	      
+      	 <!-- id없이 name값만 있는 경우 where절에 바로 and가 나오니까 오류 발생 -->
+      	 <!-- id와 name값 둘 다 null인 경우 where가 나오니까 오류 발생 -->
+      	 <!-- 해결방법 1.where 선택절 	2.where절 기본구문 완성 -->
+      	 <!-- 따라서 임의로 where절의 기본구문을 완성시키기 위해 1 = 1을 만들어두기도 했음 -->
+      	 
+      	 
+    	<!--  select *
+    	  from mybatis_member
+      	 where 1 = 1 
+      	 <if test="id != null">
+      	 id like '%' || #{id} || '%'
+      	 </if>
+      	 <if test="name != null">
+      	   and name like '%' || #{name} || '%'
+      	 </if> 
+        </select>
+      	 -->
+      	 
+    
+     <select id="getMemberDynamicList2" parameterType="search" resultMap="memberMap">
+          select *
+		    from mybatis_member
+		    <where> 
+		    	<choose>
+		    		<when test="searchType == 'id'">
+		    			id like '%' || #{searchWord} || '%'
+		    		</when>
+		    		<when test="searchType == 'addr'">
+		    			addr like '%' || #{searchWord} || '%'
+		    		</when>
+		    		<otherwise>
+		    			name like '%' || #{searchWord} || '%'
+		    		</otherwise>
+		    	</choose>
+		    </where>
+     </select>
+	      <!-- if는 단독적으로 쓰는 경우, choose는 선택하는 경우 사용 
+	      otherwise는 else역할-->
+    
+</mapper>

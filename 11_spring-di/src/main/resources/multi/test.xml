@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- beans를 default name으로 쓸거야 -->
+<!-- property를 단축해서 쓸 수 있게하는 역할 p -->
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+		<bean id="ham" class="O8multi.HamSand"/>
+</beans>	
+
+
+
+
+
+
+
+
+
+

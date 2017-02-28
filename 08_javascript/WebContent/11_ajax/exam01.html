@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../framework-t.js"></script>
+</head>
+<body>
+	<h1>Ajax 통신으로 서버에서 받은 메세지</h1>
+	<!-- hello.jsp 결과를 div에 찍을거야 -->
+	<div id="result"></div>
+	<br>
+	<button>Ajax 호출</button>
+	
+	<script>
+		// 이벤트 설정
+		$("button").on("click", function () {
+			// ajax 통신을 담당하는 객체 생성 (ajax엔진과 소통할 수 있는 객체)
+			var xhr = new XMLHttpRequest();
+			
+			// 응답을 처리할 수 있는 콜백함수 등록하기 (응답이 오거나 하면 자동 실행됨)
+			xhr.onreadystatechange = function () {
+				console.log("콜백함수 들어왔어용");
+				// 서버에서 모든 응답이 왔을 때(서버에서 모든 데이터가 다 왔어! -> readyState 4일 때)
+				if (xhr.readyState == 4) {
+					// 응답이 정상적으로 처리되었을 때
+					if (xhr.status == 200) {
+						// 서버의 응답결과 출력하기
+						$("#result").html(xhr.responseText);
+					}
+					
+				}
+				// 이 외의 결과는 뺑뺑 돌아가는 처리도 가능해~
+			};
+			
+			// 서버에 비동기 요청하기
+			// open에 요청 방식, 어떤 페이지 등의 정보 입력 . ajax는 동기방식으로도 사용가능하기때문에 true가 있는거야. 근데 쓸 일 없음 거의~
+			// 지금은 연습하니까 jsp 불러오는거지 프로그램에서 jsp 직접 요청하지마! servlet 통해서 jsp 불러와야해 
+			xhr.open("GET", "hello.jsp", true);
+			xhr.send();
+			
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>06_servletjsp</display-name>
+  
+  
+  <!-- servlet 클래스의 위치 (servlet-class) & 클래스를 어떤 이름으로 호출할 지 alias 설정(servlet-name) -->
+  <servlet>
+  	  <!-- 서블릿 클래스 정보 등록 -->
+      <!-- 클래스 이름의 앞자만 소문자로 바꾸는 네이밍룰을 가지자 -->
+  	  <servlet-name>test01</servlet-name>
+  	  <!-- 패키지명 + 클래스명 -->
+  	  <servlet-class>servlet.Test01</servlet-class>
+  </servlet>
+  
+  <!-- 특정 URI와 서블릿 클래스를 연결하는 역할 (Tomcat이 찾아갈 수 있게)-->
+  	  <servlet-mapping>
+  	  	   
+  	  	  <!-- 다이나믹 웹 중 어떤 프로젝트를 찾아갈 건지 알 수 있게 프로젝트명(=컨텍스트명, 웹어플리케이션명)
+  	  	       http://localhost:9090/06_servletjsp/servlet/test01 -->
+  	  	  <!-- 서블릿의 패스 경로를 지정할 때는 "servlet name + url-pattern" 순으로 적고
+  	  	       url-pattern에 주소는 프로젝트명은 제외하고 적어준다-->
+  	  	  <servlet-name>test01</servlet-name>
+  	  	  <url-pattern>/servlet/test01</url-pattern>
+  	  </servlet-mapping>
+  <!-- 새로운 servlet과 url마다 servlet 클래스 정보와 mapping을 만들어주기 -->
+  
+  
+
+  
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

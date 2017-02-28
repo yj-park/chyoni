@@ -1,0 +1,122 @@
+<!-- 
+	find(선택자) : 현재 확장 집합 중에서 자식태그 선택 children과 유사함
+	prev( ) : 현재 확장 집합의 바로 이전 엘리먼트 선택
+	prevAll( ) : 현재 확장 집합의 이전 엘리먼트 선택
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css selectors</title>
+<style type="text/css">
+	div {
+		width: 60px;
+		height: 60px;
+		margin: 10px;
+		float:left;
+	}
+	p {
+		clear: left;
+		font-weight: bold;
+		font-size: 16px;
+		color: blue;
+		margin: 10px;
+		padding: 2px;
+	}
+	input[type=button] {
+		font-size: 20px;
+		font-weight: bold;
+		width: 150px;
+		height: 40px;
+	}	
+</style>
+<script src="../js/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<p>p1</p>
+	<div>div<span id="s1">1</span></div>
+	<div>div<span id="s2">2</span></div>
+	<div>div<span id="s3">3</span></div>
+	<div>div<span id="s4">4</span></div>
+	<div>div<span id="s5">5</span></div>
+	<div>div<span id="s6">6</span></div>
+	<p id="p2">p2</p>
+	
+	<button>find()</button>
+	<button>prev()</button>
+	<button>prevAll()</button>
+	<button>next()</button>
+	<button>nextAll()</button>
+	<button>slice(0,2)</button>
+	<button>siblings()</button>
+	
+	<script>
+		$("button:eq(0)").on("click", function () {
+			// div의 자식 엘리먼트 중 아이디가 s2인 것 선택
+			$("div").find("#s2").css({
+				"background" : "tomato",
+				"color" : "white",
+				"font-size" : "30px",
+				"border" : "5px solid black"
+			});
+		});
+		
+		$("button:eq(1)").on("click", function () {
+			// 선택된 확장 집합체의 형제 중(즉, 같은 부모를 가진 애들) 
+			$("#p2").prev().css({
+				"background" : "tomato",
+				"color" : "white",
+				"font-size" : "30px",
+				"border" : "5px solid black"
+			});
+		});
+		
+		$("button:eq(2)").on("click", function () {
+			$("#p2").prevAll().css({
+				"background" : "tomato",
+				"color" : "white",
+				"font-size" : "30px",
+				"border" : "5px solid black"
+			});
+		});
+		
+		$("button:eq(3)").on("click", function () {
+			$("#p2").next().css({
+				"background" : "tomato",
+				"color" : "white",
+				"font-size" : "30px",
+				"border" : "5px solid black"
+			});
+		});
+		
+		$("button:eq(4)").on("click", function () {
+			$("#p2").nextAll().css({
+				"background" : "tomato",
+				"color" : "white",
+				"font-size" : "30px",
+				"border" : "5px solid black"
+			});
+		});
+		
+		$("button:eq(5)").on("click", function () {
+			// 0번째부터 2번째 전까지 자를래. 즉, 0,1만 선택
+			$("div").slice(0, 2).css({
+				"background" : "tomato",
+				"color" : "white",
+				"font-size" : "30px",
+				"border" : "5px solid black"
+			});
+		});
+	
+		$("button:eq(6)").on("click", function () {
+			// id가 p2인거 빼고 나머지 형제들 다 선택!
+			$("#p2").siblings().css({
+				"background" : "tomato",
+				"color" : "white",
+				"font-size" : "30px",
+				"border" : "5px solid black"
+			});
+		});
+	</script>	
+</body>
+</html>

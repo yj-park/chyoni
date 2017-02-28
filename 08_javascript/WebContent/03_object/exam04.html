@@ -1,0 +1,50 @@
+<!-- 
+	객체 프로퍼티 삭제
+	
+	delete 객체.프로퍼티명
+	
+	delete로 객체 자체를 삭제할 수 없다.
+	delete 객체 -> X
+	
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var obj = {
+			id: "hong",
+			name: "홍길동",
+			email: "hong@a.com",
+			info: function() {
+				console.log(this.id, this.name, this.email);
+			},
+			// this는 자기를 호출한 객체를 본다
+			info2: function() {
+				console.log(id, name, email); 
+			}
+			// 함수도 값일 뿐! 익숙해지렴
+			
+		
+	};
+	
+	obj.info();
+	console.log("name 프로퍼티 제거");
+	delete obj.name;
+	obj.info();       // undefined가 떠야돼
+	
+	console.log("obj 제거 시도"); 
+	delete obj;
+	obj.info();     // obj는 삭제되지 않기 때문에 이전과 동일한 결과값 출력됨
+	
+	obj.info2(); // 오류 발생
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

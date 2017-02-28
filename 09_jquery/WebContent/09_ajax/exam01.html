@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<button>호출</button>
+	<div id="result"></div>
+	
+	<script>
+		// $.ajax({});
+		$("button").click(function () {
+			// success, error : jquery 버전 1.8부터 deprecated됨
+			/*
+			$.ajax({
+				url: "/09_jquery/ajax/exam01",
+				type: "GET",
+				success: function (msg) {
+					$("#result").html(msg);
+				},
+				// 이클립스가 실패했을 때
+				error: function () {}
+			});
+			*/
+			// success를 대신하는 done
+			$.ajax({
+				url: "/09_jquery/ajax/exam01",
+				type: "GET"
+			})
+			.done(function (msg) {
+				$("#result").html(msg);
+			})
+			// error를 대신하는 fail
+			.fail(function (jqXhr, textStatus, errorText) {
+				// 에러메세지를 알고 싶은 경우
+				alert("에러발생 : " + errorText);
+			});
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

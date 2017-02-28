@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var msg = "최상위 컨텍스트 영역";
+	
+	function nextVal() {
+		var id = 1;
+		// 함수는 실행될 때 실행 컨텍스트가 생성됨 (실행끝나면 삭제됨)
+		
+		// 콜백함수
+		return function() {
+			return id ++;
+		}
+	}
+	
+	var seq = nextVal();
+	console.log( seq() );
+	console.log( seq() );
+
+	var seq2 = nextVal();
+	console.log( seq2() );
+	console.log( seq2() );
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

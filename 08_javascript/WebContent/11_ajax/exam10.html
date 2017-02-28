@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../framework-t.js"></script>
+</head>
+<body>
+	<h1>파라미터 처리 확인</h1>
+	<hr>
+	<div id="result">으하하하</div>
+	
+	<button id="clearBtn">초기화</button>
+	<button id="send1">GET 호출</button>
+	<button id="send2">POST 호출</button>
+	
+	<script>
+		$("#clearBtn").on("click", function () {
+			$.ajax({
+				url: "exam04",
+				data: {msg: "test"},
+				success: function (result) {
+						$("#result").html("");
+				}
+			});
+		});
+		
+		$("#send1").on("click", function () {
+			$.ajax({
+				url: "exam04",
+				data: {msg: "test"},
+				success: function (result) {
+						$("#result").html(result);
+				}	
+			});
+		});
+		
+		$("#send2").on("click", function () {
+			$.ajax({
+				method: "POST",
+				url: "exam04",
+				data: {msg: "test"},
+				success: function (result) {
+					$("#result").html(result);
+				}
+			});
+		});
+	</script>
+	
+<!--post일때 필수  
+	<form enctype="application/x-www-form-urlencoded"></form>
+--> 
+</body>
+</html>

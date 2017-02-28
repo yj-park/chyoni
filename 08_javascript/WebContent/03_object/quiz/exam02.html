@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	// MyMap 객체 구현하기
+	
+	
+	
+	var mData = MyMap;
+	mData.put("id", "sbc");
+	mData.put("name", "sonbyungchan");
+	
+	alert(mData.size());      // 2
+	alert(mData.get("id"));   // sbc
+	mData.del("id");          
+	alert(mData.get("id"));   // undefined	
+	mData.clear();
+	alert(mData.size());      // 0
+</script>
+</head>
+<body>
+
+</body>
+</html>

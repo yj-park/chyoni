@@ -1,0 +1,31 @@
+<!-- 
+ 	객체일 때 주소값을 활용한다!
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var i = 1;
+	var j = "1";
+	console.log(i==j); // true
+	
+	var iObj = { count: 1};
+	var jObj = { count: 1};
+	console.log(iObj == jObj); // false
+	
+	var kObj = iObj;
+	console.log(kObj == iObj); // true
+	
+	kObj.count = 10;
+	console.log(iObj.count);  // 10
+	console.log(kObj.count);  // 10 같은 주소를 가리키니까!
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

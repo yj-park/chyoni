@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="bigger();" >크게</button>
+	<button onclick="smaller();" >작게</button>
+	<br>
+	<br>
+	<br>
+	<img src="ball41.gif" id="img"/>
+	
+	<script>
+		function bigger() {
+			var iObj = document.querySelector("#img"); 
+			iObj.width = iObj.width + 10;
+			iObj.height = iObj.height + 10;
+		}
+		
+		function smaller() {
+			var iObj = document.querySelector("#img");
+			iObj.width = iObj.width - 10;
+			iObj.height = iObj.height - 10;
+		}
+	</script>
+</body>
+</html>

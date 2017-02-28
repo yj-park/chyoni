@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="doAdd();">추가</button>
+	<div id="divList" data-count="0">
+	
+	</div>
+	
+	<script>
+		function doAdd() {
+			var divList = document.querySelector("#divList");
+			var count = parseInt(divList.getAttribute("data-count")) + 1;
+			divList.innerHTML += "<div>추가된 DIV id : child_" + count  +"</div>";
+		}
+	</script>
+</body>
+</html>

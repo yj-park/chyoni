@@ -1,0 +1,22 @@
+<!-- Test06과 연결된 html파일 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 사용자가 입력한 데이터를 전송하기 위해서는 form태그로 감싸져있어야함-->
+	<h1>서블릿으로 데이터 전송</h1>
+	<!-- 경로에 반드시 프로젝트명 필수! -->
+	<!-- method를 지정하지 않으면 GET방식 -->
+	<form action="/06_servletjsp/servlet/test06" method="post">
+	<!-- tomcat 8.0이후부터 GET방식일 때는 한글 자동 디코딩처리됨 -->
+	<!-- method방식이 POST라면 한글 자동 디코딩 처리하라고 지정할 수 있어 (Test06 자바클래스에서) -->
+		id : <input type="text" name="id"/><br>
+		pass : <input type="text" name="pass"/><br>
+		<input type="submit" value="확인"/>
+	</form>
+</body>
+</html>

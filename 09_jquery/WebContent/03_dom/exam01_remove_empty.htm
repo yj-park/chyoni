@@ -1,0 +1,52 @@
+<!-- 
+	remove : 엘리먼트 자체 삭제
+	empty  : 엘리먼트 안의 내용 제거
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+	div.a {
+		margin: 30px;
+		font-size: 20px;
+		padding: 10px;
+		border : 5px solid orange;
+	}
+	button {
+		margin-left: 30px;
+		height: 50px;
+		font-weight: bold;
+		font-size: 20px;
+	}
+</style>
+<script src="../js/jquery-3.1.1.js"></script>
+</head>
+<body>
+    <button>remove</button>
+    <button>empty</button>
+	<div class="a">
+		<h1>1</h1>
+		<h1>2</h1>
+		<h1>3</h1>
+		<h1>4</h1>
+		<h1>5</h1>
+	</div>
+	<script>
+		// h1 엘리먼트 삭제
+		$("button:eq(0)").on("click", function() {
+			$("div > h1:last").remove();
+		});
+		
+		// h1 엘리먼트 내의 내용만 삭제
+		$("button:eq(1)").on("click", function() {
+			$("div > h1:last").empty();
+		});
+	</script>	
+</body>
+</html>
+
+
+
+
+

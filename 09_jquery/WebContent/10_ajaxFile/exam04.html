@@ -1,0 +1,66 @@
+<!-- 
+	attachFile이라는 이름으로 선택한 여러 개의 파일이 저장됨 -> 이름 하나로 묶여서 업로드
+	사용자의 입장에서는 multiple이 편하지만 이름이 없으면 서버에서 불러내올 수 없어!!
+	따라서, 두 방식을 합쳐보자! 보내는 화면은 multiple이지만 내가 이름을 직접 정해서 서버에 저장해주자
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<form id="ajaxForm" action="/09_jquery/ajaxfile/exam01"
+	      method="post"
+	      enctype="multipart/form-data">
+		<input type="text" name="msg" /><br>
+		<input type="file" name="attachFile" multiple="multiple" />
+		<button type="button">업로드</button>	      
+	</form>
+	<script>
+		$("button").click(function () {
+			// files 속성에는 사용자가 선택한 파일의 정보가 들어옴
+			console.dir( $("[name=attachFile]")[0].files );
+			console.dir( $("[name=attachFile]")[0].files[0] );
+			
+			// 폼의 데이터를 처리할 수 있는 스크립트 객체
+			// submit하기 위한 form data를 저장하는 것
+			var fd = new FormData();
+			fd.append("msg", $("[name=msg]").val());
+			fd.append("attachFile1", $("[name=attachFile]")[0].files[0]);
+			fd.append("attachFile2", $("[name=attachFile]")[0].files[1]);
+			
+			$.ajax({
+				url: "/09_jquery/ajaxfile/exam02",
+				data: fd,
+				type: "POST",
+				// 기본 방식 쓰지마세요
+				processData: false,
+				contentType: false,
+				success: function () {
+					alert ("FormDate 방식 파일 업로드 성공");
+				}
+			});
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

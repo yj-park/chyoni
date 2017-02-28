@@ -1,0 +1,48 @@
+<!-- 
+	이벤트 전파시
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	h1, div {
+		border: 3px solid black; margin: 30px;
+	}
+</style>
+</head>
+<body>
+	<div id="outerDiv">
+		<div id="innerDiv">
+				<h1 id="h1Obj">이벤트 전파 확인</h1>
+		</div>
+	</div>
+	<div id="debug"></div>
+	<script>
+		var outerDiv = document.querySelector("#outerDiv");
+		var innerDiv = document.querySelector("#innerDiv");
+		var h1Obj = document.querySelector("#h1Obj");
+		
+		outerDiv.addEventListener("click", function() {
+			debug("outerDiv");
+		} );
+		innerDiv.addEventListener("click", function() {
+			debug("innerDiv");
+			
+		} );
+		h1Obj.addEventListener("click", function(e) {
+			debug("h1Obj");
+			//부모 엘리먼트에 설정된 동일한 click 이벤트에 대한 전파를 중지시킴 (div는 안해줘서 다 뜨는거임)
+			e.stopPropagation();
+			
+		} );
+		
+		function debug(msg) {
+			var debug = document.querySelector("#debug");
+			debug.innerHTML += msg + "<br>";
+		}
+	</script>
+</body>
+</html>

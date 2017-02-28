@@ -1,0 +1,39 @@
+<!-- 
+	삭제할 대상 찾기 -> 삭제할 대상의 부모 찾기(parentNode.removeChild(삭제할 변수를 매개변수로 주기))
+	
+	특정 엘리먼트 삭제하기
+	parentNode.removeChild("삭제대상");
+	
+	현재 엘리먼트의 부모 노드
+	객체.parentNode
+	
+	현재 엘리먼트 노드의 자식 노드
+	firstChild, lastChild
+	
+	
+ -->
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="doAdd();">추가</button>
+	<button onclick="doDel();">삭제</button>
+	<div></div>
+	
+	<script>
+		function doAdd() {
+			var divObj =document.querySelector("div");
+			divObj.innerHTML += "<h1>테스트</h1>"
+		}
+		function doDel() {
+			var h1Obj =document.querySelector("h1");
+			h1Obj.parentNode.removeChild(h1Obj);
+			
+		}
+	</script>
+	
+</body>
+</html>

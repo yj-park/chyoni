@@ -1,0 +1,54 @@
+<!-- 
+	(자바는 클래스에 선언되어있어야 가능했음)
+	프로퍼티의 동적 추가
+	
+	함수도 주소를 가지고 있는 객체
+	
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var obj = {};
+	// 처음에 obj 객체가 생겼을 때는 __proto__밖에 없어
+	
+	console.log("obj.id", obj.id);
+	
+	// id 프로퍼티가 없을 경우 자동으로 추가됨
+	
+	// 만약 id 프로퍼티가 있는 경우에만 추가하고싶어! 하는 경우 if 조건을 주자
+	// if (obj.id) {}
+	// if (obj.id != undefined) {}
+	
+	obj.id = "hong";
+	obj["email"] = "hong@a.com";
+	
+	// 정리좀해라 여기
+	// 객체 안에 있는 함수에서의 this는 자신을 이 함수에 호출하는 객체가 대상이 됨
+	// (함수가 객체 안에 들어가 있는 경우 메소드라고도 부름)
+	
+	obj.setId = function (id) {
+		this.id = id;
+	};
+	// -> 이 함수를 부르는 대상 객체가 obj가 되고 obj에 있는 id에 이 값을 설정하라는 뜻!
+	
+	obj.getId = function (id) {
+		return this.id;
+	};
+	
+	console.log("obj.id", obj.id);
+	console.log("obj.email", obj.email);
+	
+	obj.setId("kang");
+	console.log( obj.getId() );
+	
+
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

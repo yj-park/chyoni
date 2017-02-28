@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>경로 찾기</title>
+</head>
+<body>
+   <!-- 
+    컨텐트 주석문 : 브라우저 화면에 출력되지 않는다. 
+    -->
+   <!-- 절대경로 찾기  -->
+   <a href="http://localhost:9090/04_html/first.html">first.html 파일로 이동하기</a>
+   <!-- a링크 : 클릭시 지정 페이지 이동 -->
+   <!-- ctrl+F5 : 캐시 사용 방지 -->
+   <br>
+   
+   <!-- 상대경로 찾기  
+   1. /로 시작
+    : 절대경로에서 포트번호까지를 제외한다. (웹어플리케이션부터 시작)
+    " /04_html/first.html"
+      같은 프로젝트내에 위치할 때 사용하는 방법
+      
+   2. /로 시작하지 않는 경우 
+    : 현재 파일이 담겨있는 패스가 기준
+   -->
+  <!-- url기준으로 올려보내고 내보내기 -->
+  
+   <a href="/04_html/first.html">first.html 파일로 이동하기</a>
+   <br>
+   <a href="exam01.html">exam.html 파일로 이동하기</a>
+   <br>
+   <a href="../first.html">first.html 파일의 위치를 하나 위로 이동하기</a>
+   <br>
+   <a href="../quiz/aaa/success.html">success.html 파일의 위치를 하나 위로 이동하고 폴더로 이동하기</a>
+   <br>
+   <a href="http://www.naver.com"><img src="/04_html/chicken.jpg"/></a>
+   
+</body>
+</html>

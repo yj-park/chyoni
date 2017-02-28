@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	* { margin: 0px; padding: 0px; }
+	
+	ul { 
+		list-style: none;
+		margin: 20px;
+		width: 120px;
+		height: 150px;
+ 		float: left; 
+	}
+	
+	li {
+		background: #888;
+		width: 120px;
+		height: 30px;
+		padding: 2px;
+	}
+	
+	#result {
+ 		float: left; 
+	    border: 5px solid tomato;
+	    margin-top: 20px;
+	    width: 500px;
+	    height: 60px;
+		box-sizing: border-box;
+		line-height: 50px;
+	}
+	
+	span {
+		padding-left: 10px;
+	}
+	
+	.close {
+		margin-left: 2px;
+		vertical-align: text-bottom;
+	}
+</style>
+<script>
+	function doAction(isCheck, id, val) {
+		if (isCheck) add(id, val); 
+		else         del(id);
+	}
+	
+	function add(id, val) {
+		var result = document.querySelector("#result");
+		var html = "<span id='s_" + id + "'>" + val
+		         +       "<button class='close' onclick='allDel(" + id + ")'>X</button>"
+		         + "</span>";
+		result.innerHTML += html; 
+	}
+	
+	function del(id) {
+		var sObj = document.getElementById("s_" + id);
+		sObj.parentNode.removeChild(sObj);
+	}
+	
+	function allDel(id) {
+		// 화면 제거
+		del(id);
+		// 체크 상태 변경
+		document.getElementById(id).checked = false;
+	}
+</script>
+</head>
+<body>
+<ul id="memberUL">
+	<li>
+		<input type="checkbox" id="1" value="JAVA" onclick="doAction(this.checked, this.id, this.value)">
+		<label for="1">JAVA</label>
+	</li>
+	<li>
+		<input type="checkbox" id="2" value="SQL" onclick="doAction(this.checked, this.id, this.value)">
+		<label for="2">SQL</label>
+	</li>
+	<li>
+		<input type="checkbox" id="3" value="HTML" onclick="doAction(this.checked, this.id, this.value)">
+		<label for="3">HTML</label>
+	</li>
+	<li>
+		<input type="checkbox" id="4" value="CSS" onclick="doAction(this.checked, this.id, this.value)">
+		<label for="4">CSS</label>
+	</li>
+	<li>
+		<input type="checkbox" id="5" value="JAVASCRIPT" onclick="doAction(this.checked, this.id, this.value)">
+		<label for="5">JAVASCRIPT</label>
+	</li>
+</ul>
+
+<div id="result"></div>
+</body>
+</html>

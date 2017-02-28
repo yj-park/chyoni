@@ -1,0 +1,34 @@
+<!-- 
+    float : 
+    - 특정 요소를 떠 있게 하는 것, absolute 와 같이 사용 안됨
+       떠 있기 위해서 다른 요소를 왼쪽 또는 오른쪽으로 이동시킨다.
+ -->
+<html>
+<head>
+<title> float 변경 </title>
+<meta charset="utf-8" />
+<style type="text/css">
+	html, body { height: 100%; }
+	/* 내용이 없어도 100프로 다 쓸거야 */
+	.container {
+		width: 700px; height: 100%;
+		background: gray;
+		margin: 0 auto; 
+	}
+	
+	#d1, #d2 {
+		height: 100px; width: 200px;
+		border: 10px solid tomato;
+		margin: 10px;
+		float: left;
+		float: right;
+		/* 엘리먼트가 순차적으로 오른쪽 정렬. layout시 많이 사용됨*/
+	}
+</style>
+<body>
+    <div class="container">
+		<div id="d1">1</div>
+		<div id="d2">2</div>
+    </div>
+</body>
+</html>

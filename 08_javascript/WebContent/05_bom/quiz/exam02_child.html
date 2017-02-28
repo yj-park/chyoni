@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	숫자 1 : <input type="text" id="msg1"/><br>
+	타입 : <select name="연산" id="cal">
+   			<option value="+">+</option>
+   			<option value="-">-</option>
+   			<option value="*">*</option>
+   			<option value="/">/</option>
+		 </select><br>
+	숫자 2 : <input type="text" id="msg2"/><br>
+	<button onclick=showResult();>결과</button>
+	
+	<script>
+		function showResult() {
+			var msgObj1 = document.querySelector("#msg1");
+			var msgObj2 = document.querySelector("#msg2");
+			var msg1 = msgObj1.value;
+			var msg2 = msgObj2.value;
+			
+			opener.doResult(function doAction());
+			
+			function doAction(num1, cal, num2) {
+		
+				}
+			}
+			
+			self.close();
+		}
+	</script>
+</body>
+</html>

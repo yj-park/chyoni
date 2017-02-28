@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+	table, th, td {
+		border: 1px solid darkgray;
+		border-collapse: collapse;
+		padding-top: 0px;
+	}
+	th {
+		background-color: lightgray;
+		height: 20px;
+	}
+	.sun { background-color: tomato; }
+	.sat { background-color: skyblue; }
+	.Oct {
+		font: 10px 돋움;
+		width: 560px; height: 350px;
+	}
+	.rest {
+		background-image: url("/07_css/99_exam/images/01/icon_closureday.gif");
+		background-repeat: no-repeat;
+		background-position: 1px 1px;
+		width: 80px;
+	}
+	.year, .month {
+		display: inline;
+	}
+	.month { margin: 200px; }
+	
+	td {
+		line-height: 2px;
+		background-clip: padding-box;
+		padding-top: 1px;
+	}
+
+</style>
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="year">
+		<img src="/07_css/99_exam/images/01/2015.gif">
+	</div>
+	<div class="month">
+		<img src="/07_css/99_exam/images/01/schedule_ic.gif">
+		<img src="/07_css/99_exam/images/01/schedule_10.gif">
+		<img src="/07_css/99_exam/images/01/schedule_ic02.gif">
+	</div>
+	<table class="Oct">
+		<tr>
+			<th class="sun"><span>일요일</span></th>
+			<th>월요일</th>
+			<th>화요일</th>
+			<th>수요일</th>
+			<th>목요일</th>
+			<th>금요일</th>
+			<th class="sat"><span>토요일</span></th>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>1</td>
+			<td>2</td>
+			<td class="rest"><span>개천절</span></td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td class="rest"><span>정기휴관일</span></td>
+			<td>6</td>
+			<td>7</td>
+			<td>8</td>
+			<td class="rest"><span>한글날</span></td>
+			<td>10</td>
+		</tr>
+		<tr>
+			<td>11</td>
+			<td class="rest"><span>정기휴관일</span></td>
+			<td>13</td>
+			<td>14</td>
+			<td>15</td>
+			<td>16</td>
+			<td>17</td>
+		</tr>
+		<tr>
+			<td>18</td>
+			<td class="rest"><span>정기휴관일</span></td>
+			<td>20</td>
+			<td>21</td>
+			<td>22</td>
+			<td>23</td>
+			<td>24</td>
+		</tr>
+		<tr>
+			<td>25</td>
+			<td class="rest"><span>정기휴관일</span></td>
+			<td>27</td>
+			<td>28</td>
+			<td>29</td>
+			<td>30</td>
+			<td>31</td>
+		</tr>
+	</table>
+</body>
+</html>

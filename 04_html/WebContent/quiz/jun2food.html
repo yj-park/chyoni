@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>회원정보입력</h3>
+	<hr> 
+	<form action="/04_html/member/input" method="post">
+
+		<table border = "1">
+			<tr>
+			<th>*이름</th>
+			<td>
+					<input type="text" name="name"/>
+			</td>
+			</tr>
+			
+			<tr>
+			<th>*아이디</th>
+			<td>
+					<input type="text" name="id"/>
+					<img src="/04_html/btn_overlap_h19.jpg"/>
+			</td>
+			</tr>
+			
+			<tr>
+			<th>*비밀번호</th>
+			<td>
+					<input type="text" name="password"/>
+					*영문 대소문자/숫자/특수문자를 혼용하여 2종류 10~16자 또는 3종류 8~16자
+			</td>
+			</tr>
+			
+			<tr>
+			<th>*비밀번호확인</th>
+			<td>
+					<input type="text" name="passwordcheck"/>
+			</td>
+			</tr>
+			
+			<tr>
+			<th>*생일/성별</th>
+			<td>
+				<select name="year">
+					<option value="1">선택</option>
+				</select>
+				년
+				<select name="month">
+					<option value="2">선택</option>
+				</select>
+				월
+				<select name="date">
+					<option value="3">선택</option>
+				</select>
+				일
+				<input type="radio" id="gender1" name="gender" value="m" checked/>
+				<label for="gender1">남</label>
+				<input type="radio" id="gender2" name="gender" value="f" />
+				<label for="gender2">여</label>
+			</td>
+			</tr>
+			
+			<tr>
+			<th>*우편번호</th>
+			<td>
+				<input type="text" name="postnum1" size="1"/> -
+				<input type="text" name="postnum2" size="1"/>
+				<img src="/04_html/btn_postcode_h19.jpg"/>
+			</td>
+			</tr>
+			
+			<tr>
+			<th>*집주소</th>
+			<td>
+				<input type="text" name="addr1" size="50"/>
+			</td>
+			</tr>
+
+			<tr>
+			<th>*상세주소</th>
+			<td>
+				<input type="text" name="addr2" size="50"/>
+			</td>
+			</tr>
+			
+			<tr>
+			<th>*연락처</th>
+			<td>
+				<input type="text" name="homenum"/>
+			</td>
+			</tr>
+			
+			<tr>
+			<th>*이메일</th>
+			<td>
+				<input type="text" name="email1" size="6"/>@
+				<select name="email2">
+					<option value="4">선택하세요</option>
+				</select>
+					<a href="">
+						<img src="/04_html/btn_overlap_h19.jpg"/>
+					</a>
+			</td>
+			</tr>
+			
+			<tr>
+			<th>휴대폰</th>
+			<td>
+				<input type="text" name="phonenum"/>
+			</td>
+			</tr>
+
+			<tr>
+			<th>회사전화</th>
+			<td>
+				<input type="text" name="corpnum"/>
+			</td>
+			</tr>
+			
+			<tr>
+			<th>회사주소</th>
+			<td>
+				<input type="text" name="postnum1" size="1"/> -
+				<input type="text" name="postnum2" size="1"/>
+				<img src="/04_html/btn_postcode_h19.jpg"/>
+				<br>
+				<input type="text" name="corpaddr" size="50"/>
+			</td>
+			</tr>
+			
+			<tr>
+			<th>뉴스메일</th>
+			<td>
+				<input type="radio" id="mailpush1" name="mailpush" value="y" checked/>
+				<label for="mailpush1">받습니다</label>
+				<input type="radio" id="mailpush2" name="mailpush" value="n"/>
+				<label for="mailpush2">받지 않습니다</label>
+			</td>
+			</tr>
+			
+			<tr>
+			<th>sms안내</th>
+			<td>
+				<input type="radio" id="smspush1" name="smspush" value="y" checked/>
+				<label for="mailpush1">받습니다</label>
+				<input type="radio" id="smspush2" name="smspush" value="n"/>
+				<label for="mailpush2">받지 않습니다</label>
+			</td>
+			</tr>
+	</table>
+	<br>
+	<br>
+	<br>
+	
+	<a href="">
+	<img src="/04_html/btn_joincomplete_h45.jpg"/>
+	</a>
+	<a href="">
+	<img src="/04_html/btn_return_h45.jpg"/>
+	</a>
+	
+</form>
+
+</body>
+</html>

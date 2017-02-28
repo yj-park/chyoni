@@ -1,0 +1,75 @@
+<!-- 
+	태그에는 태그 그 자체에 대한 설명만 쓰는 게 요즘 추세. 조작은 스크립트를 통해서 하렴!
+	
+	이벤트 방식:
+	----------------------------------------------------
+	1. <button onclick="test();">클릭</button>  -> 자제해
+	----------------------------------------------------
+	2. <button>클릭</button>
+		var btn = document.querySelector("button");
+		btn.onclick = test;
+		function test() {} // 콜백함수까지 생성
+	----------------------------------------------------
+	3. <button>클릭</button>
+		var btn = document.querySelector("button");
+		btn.onclick = function test() {};   // 익명함수
+	----------------------------------------------------
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	button {
+		width: 200px;
+		height: 100px;
+		color: white;
+		background: tomato;
+		border: 2px solid black;
+		font-size: 25px;
+	}
+</style>
+</head>
+<body>
+	
+	<button id="btn1">시작</button>
+	<button id="btn2">종료</button>
+	
+	<script>
+		var btns = document.querySelectorAll("button");
+		for (var i = 0; 0 < btns.length; i++) {
+			btns[i].onclick = function () {    // 모든 버튼에 함수 적용
+				alert(this.innerHTML); // 이벤트를 발생시킨 애가 this
+				
+				
+				// 이벤트 제거
+				this.onclick = null; // 최초 한 번 실행되는 이벤트
+			};
+		}
+	
+		
+		
+	/*
+	var btn2 = document.querySelector("#btn2");
+	
+	btn1.onclick = function () {};
+	btn2.onclick = function () {};
+	*/
+	
+	/*
+		var btns = document.querySelectorAll("button");
+		for (var i = 0; 0 < btns.length; i++) {
+			btns[i].onclick = function () {    // 모든 버튼에 함수 적용
+				alert(this.innerHTML); // 이벤트를 발생시킨 애가 this
+				
+				
+				// 이벤트 제거
+				this.onclick = null; // 최초 한 번 실행되는 이벤트
+			};
+		}
+	*/
+	</script>
+</body>
+</html>

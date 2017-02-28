@@ -1,0 +1,98 @@
+<!-- 
+	체크박스의 체크 상태 확인 및 설정
+	
+	체크박스객체.checked : true(체크된 상태), false(체크 해제 상태)
+	
+	전체 체크를 위해서는
+	체크하려는객체로 가서 checked해주면 됨
+	
+	설정: 
+	체크박스객체.checked = true; -> 체크
+ 	체크박스객체.checked = false; -> 해제
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="mForm">
+		<input type="checkbox" id="all" name="all" value="all" onclick="changeCheck(this.checked);" /> <!-- 이벤트가 발생한 대상객체가 this가 됨. all 체크박스에 true나 false값 반환 -->
+		<label for="all">전체</label> <!--all이라는 checkbox에 전체라는 이름을 붙여주기 위해서 label만듦 label붙였기때문에 글자 눌려도 체크됨! -->
+	
+	<div>체크 여부 : <span id="allCkStatus"></span></div> <!-- 일부만 바꿀거니까 span으로 묶어서 해제인지 아닌지만 보여주려고 -->
+	<div>
+		당신의 오늘 점심 메뉴는? <br>
+		<input type="checkbox" id="todayLunch1" name="todayLunch" value="1" />
+		<label for="todayLunch1">치킨</label>
+		<input type="checkbox" id="todayLunch2" name="todayLunch" value="2" />
+		<label for="todayLunch2">칼국수</label>
+		<input type="checkbox" id="todayLunch3" name="todayLunch" value="3" />
+		<label for="todayLunch3">제육덮밥</label>
+	</div>
+	</form>
+	<script>
+		/*
+		var allEle = document.querySelector("#all");
+		var spanEle = document.querySelector("#allCkStatus");
+		// id가 all인 엘리먼트의 체크 상태를 가져올거야 어떻게? 객체.checked상태로
+		
+		// true일 경우 span 엘리먼트의 html을 체크로
+		if (allEle.checked) {
+			spanEle.innerHTML = "체크";
+		} else {
+			spanEle.innerHTML = "해제";
+		}
+				
+		function changeCheck() {
+			if (allEle.checked) {
+				spanEle.innerHTML = "체크";
+			} else {
+				spanEle.innerHTML = "해제";
+			}
+		}
+		*/
+		
+		// 중복되는 함수는 꼭 빼자!!!
+		function changeCheck(ckStatus) {
+			displayAllCheck();
+			
+			var todayCks = document.mForm.todayLunch;
+			console.log(todayCks); // 객체 수에 따라서 배열 or 하나만으로 나뉨
+			if (todayCks.length) { // 없으면 undefined. length가 있으면 배열 형태로 오니까 반복문
+				for (var i = 0; i < todayCks.length; i++) {
+					todayCks[i].checked = ckStatus;
+				} 
+			} 
+			else {
+				todayCks.checked = allEle.checked;
+			}
+			
+			// 체크박스 객체
+			/* 하드코딩 하지마!!!!!!!!!!
+			var todayCk1 = document.querySelector("#todayLunch1");
+			var todayCk2 = document.querySelector("#todayLunch2");
+			var todayCk3 = document.querySelector("#todayLunch3");
+			
+			todayCk1.checked = allEle.checked; //아이디가 올인 것의 체크상태를 가져와서 설정
+			todayCk2.checked = allEle.checked;
+			todayCk3.checked = allEle.checked;
+			*/
+		}
+		function displayAllCheck() {
+			
+			if (allEle.checked) {
+				spanEle.innerHTML = "체크";
+			} else {
+				spanEle.innerHTML = "해제";
+			}
+		}
+		var allEle = document.querySelector("#all");
+		var spanEle = document.querySelector("#allCkStatus");
+		
+		displayAllCheck();
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../framework-t.js"></script>
+</head>
+<body>
+	<h1>AJAX - 연습</h1>
+	<br>
+	아이디 <input type="text" name="id" id="id"> 
+	<div id="result" style="display: inline;"></div>
+	
+	<script>
+		$("#id").on("keyup", function () {
+			var xhr = new XMLHttpRequest();
+			
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4) {
+					if (xhr.status == 200 ) {
+						$("#result").html(xhr.responseText);
+					}
+				}
+			};
+			
+			xhr.open("GET", "member?id=" + $("#id").val(), true);
+			xhr.send(null);
+			
+		});
+	</script>
+	
+</body>
+</html>

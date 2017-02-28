@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <style>
+        div {
+            margin: 10px; padding: 5px;
+            border: 3px solid black;
+            height: 200px;
+        }
+        
+        a {
+            margin: 10px; padding: 5px;
+            border: 3px solid black;
+            display: inline-block;
+            width: 500px;
+            height: 100px;
+        }
+    </style>
+    <script src="../js/jquery-3.1.1.js"></script>
+</head>
+<body>
+    <div>
+        <a href="http://www.naver.com">mLec 이동하기</a>
+    </div>
+    <script>
+		$("a").click(function (event) {
+			alert("a 태그 클릭됨");
+			
+			/*
+			// 이벤트 전파 중지하기 -> a 태그만 실행되고 div 태그는 중지 시킴
+			event.stopPropagation();
+			
+			// 기본 할당된 이벤트 중지하기 -> a 태그만 실행되고 할당된 기본 이벤트인 페이지 이동은 X
+			event.preventDefault();
+			*/
+			// 위의 전파 중지 & 이벤트 중지 두 개를 동시에 할 수 있는 방법
+			return false;
+		});
+		
+		$("div").click(function () {
+			alert("div 태그 클릭됨");
+		});
+    </script>
+    
+    <!--  <form onsubmit="return false">했을 때도 return false 쓰면 제출 x -->
+</body>
+</html>
+
+
+
+
+
+
+
+

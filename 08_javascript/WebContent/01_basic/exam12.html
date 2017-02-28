@@ -1,0 +1,38 @@
+<!-- 
+	alert: 알림창(=경고창) -> 확인버튼
+	confirm: 확인창 -> 확인버튼 & 취소버튼 (ex:삭제? 탈퇴? 등)
+ 	prompt: 입력창 -> 사용자 입력 (확인버튼 & 취소버튼) 많이 안씀
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		/*
+		var msg = "경고창";
+		alert(msg);
+		*/
+		var msg = "삭제하시겠습니까?";
+	//	var result = confirm(msg);
+	//	console.log("result", result);
+		// 함수가 결과를 반환해주어야함. 두 가지 상황이므로 boolean형으로 반환 
+		
+		
+		if (confirm(msg)) {
+			alert("삭제 처리 진행");
+		} else {
+			alert("아무 작업 안함");
+		}
+		
+		/*
+		// prompt("타이틀-창의 제목 ", "보여줄 메세지");
+		var result = prompt("자신있는 언어", "당신이 자신있는 언어를 입력하세요");
+		console.log("좋아하는 과목", result);
+		*/
+	</script>
+</body>
+</html>

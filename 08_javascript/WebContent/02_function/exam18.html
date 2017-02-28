@@ -1,0 +1,32 @@
+<!-- 
+	지정된 시간 뒤에 함수 반복 호출
+	var id = setInterval(콜백함수, 밀리세컨드);
+	
+	clearInterval(id);
+ -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var i = 1;
+	function func () {
+		console.log(i++ + "번째 호출됨");
+	}
+	
+	var id = setInterval(func, 1000);
+	
+	setTimeout(function () {
+		clearInterval(id);
+	}, 10000);
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

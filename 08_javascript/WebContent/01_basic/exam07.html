@@ -1,0 +1,62 @@
+<!-- 
+	자바스크립트 자료형 검사
+	
+	typeof 데이터
+	typeof (데이터)
+	
+	var i = "abc";
+	typeof (i); -> i의 타입을 알아내는 것이 아닌 i가 가르키는 값의 타입을 체크한다. 즉, "abc"의 타입 체크
+	
+	typeof (데이터)의 결과는 항상 string으로 반환한다. (즉, "number", "string", "boolean",... 의 형식으로)
+	
+	null 타입은 "object"를 반환한다. (초기 버전에서의 버그)
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		console.log(typeof ("test"));
+		console.log(typeof (10));
+		console.log(typeof (true));
+		console.log(typeof (a));
+		console.log(typeof (null));
+		console.log(typeof ({}));
+		
+		// null과 object를 구분하자
+		// null타입은 false로 취급된다.
+		// 자바스크립트에서는 특정한 값을 가지고 있으면 false로 취급되는데 그 특정한 값에 null이 포함된다
+		
+		var obj1 = null;
+		var obj2 = {};
+		
+		// 이렇게는 구분할 수 없음!!!!
+		/*
+		if (typeof (obj1) == "object") {
+			console.log("obj1은 null??")
+		}
+		if (typeof (obj2) == "object") {
+			console.log("obj2는 object")
+		}
+		*/
+		
+		if (!obj1 && typeof (obj1) == "object") {
+			console.log("obj1은 null");
+		}
+		if (obj2 && typeof (obj2) == "object") {
+			console.log("obj2는 object");
+		}
+		
+		// ;을 안붙여도 자바스크립트가 자동으로 붙여주긴하지만(문법적 오류 x) 자동으로 붙여주면서 오류가 발생할 수도 있기 때문에 꼭 붙여!
+		
+		var func = function () {};
+		// 특수한 기능이 있는 object -- object의 일종인 function(메소드 역할)이 출력됨. 기능을 가진 함수 자체도 변수에 대입할 수 있다 -> 매개변수로 함수를 넘기거나 결과값으로 함수를 넘기는 게 가능함. 
+		console.log(typeof (func));
+		
+	</script>
+</body>
+</html>

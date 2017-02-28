@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="incCount();">클릭</button>
+	<h1 id="count"><span>0</span>회</h1>
+	
+	<script>
+		function incCount() {
+			console.log("호출 성공");
+			var sObj =  document.querySelector("span");
+			// span 태그 안에 있는 내용이 필요해
+			var sHtml = sObj.innerHTML;
+			console.log(sHtml + 1);
+			// sHtml이 문자열이니 숫자형태로 바꿔야겠군!
+			console.log(parseInt(sHtml) + 1);
+			sObj.innerHTML = parseInt(sHtml) + 1; 
+		}
+	</script>
+</body>
+</html>

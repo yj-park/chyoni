@@ -1,0 +1,64 @@
+<!-- 
+toggleClass : 기존 html에 opa가 있으면 삭제시키고, 없으면 opa 추가
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css selectors</title>
+<style type="text/css">
+	div.a {
+		margin: 0px auto;
+		width: 80%;
+		height: 250px;
+	}
+	h1 {
+		float: left;
+		margin-right: 20px;
+		width: 200px;
+		height: 200px;
+		background: black;
+		color: white;
+		letter-spacing: 15px;
+		line-height: 200px;
+		text-align: center;
+		opacity: 0.5;
+	}
+	button {
+		margin-right: 30px;
+		height: 50px;
+		font-weight: bold;
+		font-size: 20px;
+	}
+	.opa {
+		opacity: 1.0;
+	}
+</style>
+<script src="../js/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<div class="a">
+		<h1>마우</h1>
+		<h1 class="opa">스를</h1>
+		<h1>올리</h1>
+		<h1 class="opa">세요</h1>
+	</div>
+	<div class="a">
+		<button>toggleClass</button>
+	</div>
+	<script>
+		$("button").on("click", function() {
+			$("h1").toggleClass("opa");
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

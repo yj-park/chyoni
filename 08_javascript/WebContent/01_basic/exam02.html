@@ -1,0 +1,26 @@
+<!-- 
+	javascript 파일을 별도로 사용하는 방식
+	
+	1. .js 확장자를 가진 스크립트 파일 생성
+	2. 스크립트 파일을 사용하려는 html문서에서 
+	   <script src="스크립트 파일 위치"><script>
+	   *주의점*
+	   <script src="스크립트 파일 위치">여기에 스크립트 넣으면 실행 안됨<script>
+	   src는 외부파일을 load하겠다는 의미일 뿐 문서내에 스크립트를 만들어 사용하고 싶은 경우 다른 스크립트 태그를 별도로 생성해야함. 다른 스크립트는 무시됨
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>외부파일 참조</h1>
+	<script src="exam02.js">alert(111);</script> 
+	
+	<script>
+		alert(111);
+	</script>
+</body>
+</html>

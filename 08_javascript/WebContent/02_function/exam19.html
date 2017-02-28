@@ -1,0 +1,30 @@
+<!-- 
+	eval("문자열")
+	
+	- 문자열을 매개변수로 받아서 문자열의 내용을 자바스크립트 엔진에서 실행
+	
+	실행 시 객체를 메모리에 올려줌
+	오픈 API 활용 시 많이 사용
+ -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var str = "var i = 100; var j = 200; alert(i + j); ";
+	eval(str);
+	alert(i);
+	
+	var arr = eval("[1, 2, 3]");
+	alert(arr[1]);
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

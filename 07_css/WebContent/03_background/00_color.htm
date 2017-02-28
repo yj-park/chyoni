@@ -1,0 +1,46 @@
+<!-- 
+엘리먼트의 배경색  
+background-color: 값
+
+값에 들어갈수 있는 것들
+    HEX  value  - #ff0000 -> 16진수값 (RGB값: 각 0~255(00~ff)까지의 범위를 가짐) #000000:검은색/#ffffff:흰색
+    RGB  value  - rgb(255,0,0)
+    
+    0 - 1.0 까지 :  0 투명해짐,  1.0 불투명함
+    RGBA value  - rgba(255,0,0, 0.2) -> a는 알파(0~1까지의 숫자). 투명도 지정
+    color name - red
+    
+    HSL  -  HSL은 색조, 채도 및 밝기를 의미
+    hsl(120, 100%, 50%) :
+      색상:0(red) 120(green) 240(blue), 채도, 밝기
+      채도는 0에 가까울수록 회색
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+	h1 {
+		background-color: #F4E21A; 
+	}
+	
+	h2 {
+		background-color: rgba(255, 0, 0, 0.4);
+	}
+	
+	div {
+		background-color: hsl(120, 40%, 70%);
+	}
+</style>
+</head>
+<body>
+
+	<h1>배경색 바꾸기(background-color)</h1>
+	<h2>색상 적용하기</h2>
+	<div>
+	CSS 가 적용된 DIV 태그 입니다.
+	<p>CSS 가 적용된 P 태그 입니다.</p>
+	</div>
+
+</body>
+</html>

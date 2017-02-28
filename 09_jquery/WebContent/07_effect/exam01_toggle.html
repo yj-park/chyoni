@@ -1,0 +1,71 @@
+<!-- 
+	toggle
+	fadeToggle
+	slideToggle
+	
+	fadeOut
+	fadeIn
+	slideUp
+	slideDown
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style>
+	button {
+		margin: 5px;
+		font-size: 20px;
+		height: 50px;
+		background: tomato;
+		color: white;
+		border: 5px solid black;
+	}
+	</style>
+	<script src="../js/jquery-3.1.1.js"></script>
+</head>
+<body>
+    <button>이벤트 효과</button>
+    <div id="effDiv1">
+        <h1>애니메이션 효과</h1>
+        <p>jQuery는 애니메이션 효과를 쉽게 적용할 수 있다.</p>
+    </div>
+    <div id="effDiv2" style="display: none;">
+        <h1>숨겨져 있는 영역</h1>
+        <p>jQuery는 애니메이션 효과를 쉽게 적용할 수 있다.</p>
+    </div>
+    <script>
+		$("button").click(function () {
+		// toggle은 상태의 반대로 표현!
+		//	$("#effDiv1").toggle();
+		// toggle의 기본은 slide 효과 
+		//	$("#effDiv1").toggle(2000);
+		// fadeToggle: 나타났다가 사라지는 효과
+		//	$("#effDiv1").fadeToggle(2000);
+		// slideToggle
+		//	$("#effDiv1").slideToggle(2000);
+		// slideUp: 위로 숨기기
+		//	$("#effDiv1").slideUp(2000);
+		// slideDown: 숨겨져있는 영역 위로 나타내기
+		//	$("#effDiv2").slideDown(2000);
+			$("#effDiv1").fadeOut(2000);
+			$("#effDiv2").fadeIn(2000);
+		
+		});
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

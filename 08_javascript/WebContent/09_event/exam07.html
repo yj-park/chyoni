@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	p {
+		font-size: 20px;
+		font-weight: bold;
+		height: 40px;
+		background: tomato;
+		color: white;
+		text-align: center;
+		line-height: 40px; 
+	}
+	
+	div {
+		height: 700px;
+		background: yellow;
+		font-size: 20px;
+		overflow: auto;
+	}
+</style>
+
+</head>
+<body>
+	<p>마우스 이벤트 연습</p>
+	<div></div>
+	
+	<script>
+		var pObj = document.querySelector("p");   // 실제 이벤트 
+		var dObj = document.querySelector("div");
+		
+		pObj.addEventListener("mouseenter", function() {
+			dObj.innerHTML = "마우스가 들어갔습니다<br>" + dObj.innerHTML; 
+			// 최신 이벤트가 제일 위에 오도록 설정!
+		});
+		pObj.addEventListener("mouseleave", function() {
+			dObj.innerHTML = "마우스가 빠져나갔습니다<br>" + dObj.innerHTML; 
+		});
+		pObj.addEventListener("mousedown", function() {
+			dObj.innerHTML = "마우스가 눌렸습니다<br>" + dObj.innerHTML; 
+		});
+		pObj.addEventListener("mouseup", function() {
+			dObj.innerHTML = "마우스가 떼어졌습니다<br>" + dObj.innerHTML; 
+		});
+		pObj.addEventListener("mousemove", function() {
+			dObj.innerHTML = "마우스가 움직입니다<br>" + dObj.innerHTML; 
+		});
+		
+		
+	</script>
+</body>
+</html>

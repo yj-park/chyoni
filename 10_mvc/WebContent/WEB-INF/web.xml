@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>10_mvc</display-name>
+
+  <!-- 사용자의 모든 요청을 받기 위해 설정함 -->
+  <servlet>
+  	<servlet-name>dispatcher</servlet-name>
+  	<servlet-class>org.springframework.mvc.DispatcherServlet </servlet-class>
+  	<!-- servlet이 실행되고 init메소드가 실행될 때 접근하여 꺼내쓰기 가능! -->
+  	<init-param>
+		<param-name>controller</param-name>
+		<param-value>
+		<!-- controller개념의 클래스 이름만 오면 이제 끝! 
+		-->
+		kr.co.mlec.board.controller.BoardController;
+		kr.co.mlec.login.controller.LoginController;
+		kr.co.mlec.main.controller.MainController;
+		
+		<!-- 
+		RequestMapping에 보면 니가 연결할 메소드를 알 수 있어
+		/board/list.do=kr.co.mlec.board.controller.ListController;
+		/board/detail.do=kr.co.mlec.board.controller.DetailController;
+		/board/updateForm.do=kr.co.mlec.board.controller.UpdateFormController;
+		/board/update.do=kr.co.mlec.board.controller.UpdateController;
+		/board/delete.do=kr.co.mlec.board.controller.DeleteController;
+		/board/write.do=kr.co.mlec.board.controller.WriteController;
+		/board/writeForm.do=kr.co.mlec.board.controller.WriteFormController;
+		/board/commentList.do=kr.co.mlec.board.controller.CommentListController;
+		/board/commentRegist.do=kr.co.mlec.board.controller.CommentRegistController;
+		/board/commentUpdate.do=kr.co.mlec.board.controller.CommentUpdateController;
+		/board/commentDelete.do=kr.co.mlec.board.controller.CommentDeleteController;
+		/login/login.do=kr.co.mlec.login.controller.LoginController;
+		/login/loginForm.do=kr.co.mlec.login.controller.LoginFormController;
+		/login/logout.do=kr.co.mlec.login.controller.LogoutController;
+		/main/main.do=kr.co.mlec.main.controller.MainController
+		 -->
+		</param-value>  	
+  	</init-param>
+  	
+  	<init-param>
+  		<param-name>prefix</param-name>
+  		<param-value>/jsp/</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>suffix</param-name>
+  		<param-value>.jsp</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>dispatcher</servlet-name>
+  	<!-- 사용자의 요청에 do가 포함되면 dispatcher로 연결  -->
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

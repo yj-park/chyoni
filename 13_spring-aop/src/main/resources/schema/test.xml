@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- beans를 default name으로 쓸거야 -->
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/aop 
+                           http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- db는 무조건 aop 통해서 transaction 처리함 -->
+
+	<!-- 공통 기능 클래스 -->
+	<bean id="log" class="_04_schema.LogAspect"/>
+	<bean id="time" class="_04_schema.TimeAspect"/>
+	
+	<!-- 핵심 기능 클래스 -->
+	<bean id="board" class="_04_schema.BoardController"/>
+	<bean id="member" class="_04_schema.MemberController"/>
+	
+	<aop:config proxy-target-class="true">
+		<!-- <aop:pointcut id="pCut" expression="execution(* execute(..))" />  -->
+		<!-- <aop:pointcut id="pCut" expression="execution(public * _04_schema.*.execute(..))" />  -->
+		<!-- <aop:pointcut id="pCut" expression="execution(public * _04_schema..*.execute(..))" /> -->
+		<!-- _04_schema 패키지의 Controller 인터페이스를 상속받은 하위 클래스들의 execute 메소드만 대상으로 선정하겠다-->
+		<aop:pointcut id="pCut" expression="execution(public * _04_schema.Controller+.execute(..))" />
+		<aop:aspect ref="log" order="1">
+			<aop:before method="showLog" pointcut="execution(* execute(..))"/>
+		</aop:aspect>
+		<aop:aspect ref="time" order="0">
+			<aop:around method="executeTime" pointcut-ref="pCut"/>
+		</aop:aspect>
+	</aop:config>
+	
+</beans>	
+
+
+
+
+
+
+
+
+
+

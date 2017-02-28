@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="framework.js"></script>
+</head>
+<body>
+	<button id="btn1">html 변경</button>
+	<button id="btn2">html 추출</button>
+	<button id="btn3">text 변경</button>
+	<button id="btn4">input value 변경, 추출</button>
+	<br>
+	<button id="btn5">속성 변경, 추출</button>
+	<button id="btn6">CSS 속성</button>
+	<button id="btn7">엘리먼트 추가</button>
+	<button id="btn8">이벤트 설정</button>
+
+	<h1>라이브러리 만들기</h1>
+	<div id="msg">메세지 출력</div>
+	<h1 class="cMsg">class 속성 접근1</h1>
+	<p>class 속성 접근1</p>
+	<p>class 속성 접근1</p>
+	<p>class 속성 접근1</p>
+	
+	아이디 : <input type="text" id="email" name="email" /><br>
+	<div id="pList"></div>
+		
+	<script>
+		/*
+		var btn8 = document.querySelector("#btn8");
+		btn8.addEventListener("click", function () {
+			alert("버튼 8 클릭됨...");
+		});
+		*/
+		
+		$("#btn8").on("click", function () {
+			alert("버튼 8 클릭됨...");
+		});
+		
+	
+		$("#btn7").addEventListener("click", function () {
+			/*
+			var h1Obj = document.createElement("h1");
+			var text = document.createTextNode("연습중...");
+			h1Obj.appendChild(text);
+			
+			var pList = document.querySelector("#pList");
+			pList.appendChild(h1Obj);
+			*/
+			$("p").append($("<h1>").html("연습중..."));
+		});
+		
+		$("#btn6").addEventListener("click", function () {
+			/*
+			var msg = document.querySelector("#msg");
+			msg.style["border"] = "1px solid tomato";
+			msg.style["color"] = "skyblue";
+			msg.style["background"] = "yellow";
+			
+			alert(msg.style["color"]);
+			
+			$("#msg").css("border", "1px solid tomato");
+			$("#msg").css("color", "skyblue");
+			$("#msg").css("background", "yellow");
+			*/
+			
+			$("#msg").css({
+				"border": "1px solid tomato",
+				"color": "skyblue",
+				"background": "yellow"
+			});
+			alert($("#msg").css("color"));
+		});
+		
+		$("#btn5").addEventListener("click", function () {
+			/*
+			var msg = document.querySelector("#msg");
+			msg.setAttribute("mymsg", "aaa");
+			msg.setAttribute("title", "연습중..");
+			
+			alert(msg.getAttribute("title"));
+			*/
+			
+			/*
+			$("#msg").attr("mymsg", "aaa");
+			$("#msg").attr("title", "연습중..");
+			alert($("#msg").attr("title"));
+			
+			alert(
+				$("#msg").attr("mymsg", "aaa")
+				         .attr("title", "연습중..")
+				         .attr("title")
+			);
+			*/
+			
+			/*
+			$("#msg").attr({"mymsg": "aaa", "title": "연습중.."});
+			alert($("#msg").attr("title"));
+			*/
+			
+			alert(
+				$("#msg").attr({"mymsg": "aaa", "title": "연습중.."})
+				         .attr("title")
+			);
+		});
+	
+		$("#btn4").addEventListener("click", function () {
+			// 설정
+			/*
+			var email = document.querySelector("#email");
+			email.value = "a@a.com";
+			// 추출
+			alert(email.value);
+			*/
+			
+			/*
+			$("#email").val("a@a.com");
+			alert($("#email").val());
+			*/
+			
+			alert($("#email").val("a@a.com").val());
+			
+			
+		});
+		
+		$("#btn3").addEventListener("click", function () {
+			/*
+			var msg = document.querySelector("#msg");
+			msg.innerText = "<h1>메세지 동적 변경</h1>";
+			alert(msg.innerText);
+// 			$("#msg").innerText = "변경";
+			*/
+			
+			/*
+			$("#msg").text("<h1>메세지 동적 변경</h1>");
+			alert($("#msg").text());
+			*/
+			
+			alert($("#msg").text("<h1>메세지 동적 변경</h1>").text());
+			
+		});
+	
+		// html 추출
+		btn2.addEventListener("click", function () {
+			// id가 msg 인 엘리먼트의 html을 경고창에 띄운다.
+			/*
+			var msg = document.querySelector("#msg");
+			alert(msg.innerHTML);
+			alert($("#msg").innerHTML);
+			*/
+			
+			alert($("#msg").html());
+			alert($("p").html());
+		});
+	
+	
+		// html 변경
+		btn1.addEventListener("click", function () {
+			/*
+			var pArr = document.querySelectorAll("p");
+			for (var i = 0; i < pArr.length; i++) {
+				pArr[i].innerHTML = "동적변경";
+			}
+			*/
+			var pObj = $("p");
+			pObj.html("동적변경");
+			pObj.html("aaa");
+			$("p").html("동적변경");
+			$("p").html("aaa");
+			$("p").html("동적변경").html("aaa");
+			$("#msg").html("<h1>메세지 동적 변경</h1>");
+		});
+	
+		
+	
+		/*
+		var msg = document.querySelector("#msg");
+		console.dir(msg);
+		
+		var msg2 = $("#msg");
+		console.dir(msg2);
+		*/
+	</script>	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

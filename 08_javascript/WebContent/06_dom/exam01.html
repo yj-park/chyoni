@@ -1,0 +1,52 @@
+<!-- 
+	window 밑에 document라는 객체(+location, navigator, screen 등도 포함)가 존재함
+	document -> DOM
+	
+	* 엘리먼트 노드 생성하기
+	var ele = document.createElement("엘리먼트명");
+	(반환하는 값을 변수에 받아줘)
+	
+	* 텍스트 노드 생성하기
+	var textObj = document.createTextNode("텍스트");
+	
+	모든 웹사이트는 위 두 가지로 이루어져있어
+	<div>test</div>
+	
+	div:엘리먼트 노드
+	test:텍스트 노드
+	 
+	document~로 생성해주면 메모리에 올라가있는 거야
+	
+	* 특정 엘리먼트의 자식으로 추가
+	parentNode.appendChild(childNode)
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="doAdd();">추가</button>
+	<div id="divList"><span>1</span></div>
+	
+	<script>
+		function doAdd() {
+			// id가 divList인 거 찾기
+			var divList = document.querySelector("#divList");
+			// 찾으면 메모리에 <h1></h1> 엘리먼트 노드 만들기
+			var h1Obj = document.createElement("h1");
+			// 테스트라는 글자를 가지고 있는 텍스트 노드 만들기
+			var text = document.createTextNode("테스트");
+			
+			// h1Obj와 text를 부모 자식 관계로 추가하기
+			// <h1>테스트</h1> 이 모양으로 만들거야
+			h1Obj.appendChild(text);
+			
+			// divList에 자식으로 h1Obj추가하기
+			//<div id="divList"><h1>테스트</h1></div>
+			divList.appendChild(h1Obj);
+		}
+	</script>
+</body>
+</html>

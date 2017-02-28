@@ -1,0 +1,32 @@
+<!-- 
+	DOM
+	
+	특정 엘리먼트 접근하기
+	var ele = document(DOM 객체. 자바스크립트에서 제공. window밑에 있음).querySelector("css selector");
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<button type="button" onclick="showTime()">시작</button>
+<h1 id="time"></h1>
+<!-- h1태그 사이 공간을 inner라고하며 innerHTML등 이 있음 -->
+
+<script>
+	function showTime() {
+		// 시간 정보를 id가 time인 엘리먼트에 표시하기
+		var h1Obj = document.querySelector("#time");
+		
+		// 자바 스크립트 Date 내장객체
+		var date = new Date();
+		
+		h1Obj.innerHTML = date.toLocaleTimeString();
+		setTimeout(showTime, 1000);
+	}
+</script>
+</body>
+</html>

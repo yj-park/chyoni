@@ -1,0 +1,98 @@
+<!-- 
+	:first
+	:last
+	:first-child
+	:last-child
+	:nth-child(n)
+	:nth-child(even|odd)
+	------------------- 인덱스 번호 0부터 시작
+	:eq(n) 위치에 있는거
+	:gt(n) 순서보다 높은거
+	:lt(n) 순서보다 앞에 오는 거
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css selectors</title>
+<style type="text/css">
+	.choice {
+		margin : 5px;
+		padding: 5px;
+		border : solid #000000 thick;
+		background: orange;
+	}
+</style>
+<script src="../js/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<div id="p">id가 p인 DIV
+		<div id="a">id가 a인 DIV 
+			<div id="a1">id가 a인 div의 자식 DIV</div>
+		</div>
+		<div id="b" class="divClass">id가 b인 DIV<span id="b1">아이디가 b1인 span</span></div>
+		<div id="c">id가 c 인 DIV
+			<a href="http://www.naver.com">id가 c인 DIV의 자식 a 태그</a>
+		</div>
+	</div>
+	<script>
+	// 문서에서 가장 처음에 나오는 부분에 choice 추가 -> html 엘리먼트 선택
+	//	$(":first").addClass("choice");
+	
+	// 문서 내의 div 엘리먼트 중에서 가장 처음에 나오는 엘리먼트 선택 -> #p
+	//	$("div:first").addClass("choice");
+	
+	// 문서 내의 div 엘리먼트 중에서 가장 마지막에 나오는 엘리먼트 선택 ->#c
+	//	$("div:last").addClass("choice");
+	
+	// 문서 내의 div 엘리먼트 중에서 누군가의 첫번째 자식 엘리먼트 선택 -> #p, #a, #a1
+	//	$("div:first-child").addClass("choice");
+	
+	// 문서 내의 div 엘리먼트 중에서 누군가의 마지막 자식 엘리먼트 선택 -> #a1, #c (#p는 script때문에 last-child는 안됨!)
+	//	$("div:last-child").addClass("choice");
+	
+	// 공백 문자에 따라 의미가 달라져!★
+	
+	// div 중 id가 p인 엘리먼트 중에서 누군가의 첫번째 자식 엘리먼트 선택(즉, :nth-child(1)는 first-child랑 똑같아!) -> #p
+	//	$("div[id=p]:nth-child(1)").addClass("choice");
+	
+	// div 중 id가 p인 엘리먼트의 모든 자식 중에서 누군가의 첫번째 자식 엘리먼트 선택(즉, :nth-child(1)는 first-child랑 똑같아!) -> #a, #a1, #b1
+	//	$("div[id=p] :nth-child(1)").addClass("choice"); 
+	
+	// div 중 id가 p인 엘리먼트의 바로 아래에 있는 자식 중에서 누군가의 첫번째 자식 엘리먼트 선택(즉, :nth-child(1)는 first-child랑 똑같아!) -> #a
+	//	$("div[id=p] > :nth-child(1)").addClass("choice"); 
+	
+	// div 중 id가 p인 엘리먼트의 바로 아래에 있는 자식 중에서 누군가의 두번째 자식 엘리먼트 선택 -> #b
+	//	$("div[id=p] > :nth-child(2)").addClass("choice"); 
+	
+	// div 중 id가 p인 엘리먼트의 바로 아래에 있는 자식 중에서 div면서 가장 마지막에 있는 엘리먼트 선택 -> #c
+	//	$("div[id=p] > div:last").addClass("choice"); 
+	
+	// div 중 누군가의 홀수번째 자식인 엘리먼트 선택 -> #p, #a, #a1, #c
+	//	$("div:nth-child(odd)").addClass("choice"); 
+	
+	// div 중 누군가의 짝수번째 자식인 엘리먼트 선택 -> #b
+	//	$("div:nth-child(even)").addClass("choice"); 
+	
+	// id가 a인 것을 찾고 싶을 경우
+	//	$("div[id=p] >div:eq(0)").addClass("choice");
+	
+	// id가 b인 것을 찾고 싶을 경우
+	//	$("div[id=p] >div:eq(1)").addClass("choice");
+	
+	// 인덱스 크기 큰 거 선택 -> #b, #c
+	//	$("div[id=p] >div:gt(0)").addClass("choice");
+	
+	// 인덱스 크기 작은 거 선택 -> #a, #b
+	//	$("div[id=p] >div:lt(2)").addClass("choice");
+	
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+

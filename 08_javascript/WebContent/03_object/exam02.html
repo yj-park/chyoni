@@ -1,0 +1,54 @@
+<!-- 
+	생성된 객체의 프로퍼티 값 설정과 추출
+	
+	(json형태랑 비슷. ""생략가능)
+	var obj = {
+		"이름" : "값",
+		이름 : 값		
+	};
+	
+	* 설정과 변경
+	obj.프로퍼티명 = 값;
+	obj["프로퍼티명"] = 값;
+	
+	* 추출
+	obj.프로퍼티명       -> 이 방식을 선호하지만 +, -, *, 공백 등을 사용하는 경우 사용할 수 없다.
+	obj["프로퍼티명"] 
+	
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var obj = {
+			"id" : "hong",
+			email : "hong@a.com",
+			"home-page": "www.naver.com"
+	};
+	
+	console.log("obj.id", obj.id);
+	console.log("obj['email']", obj['email']);
+//  console.log("obj.home-page", obj.home-page);
+	console.log("obj['home-page']", obj['home-page']);
+	
+	// 값 변경
+	
+	obj.id = "kang";
+	obj["email"] = "kang@a.com";
+
+	console.log("obj.id", obj.id);
+	console.log("obj['email']", obj['email']);
+	
+	//obj의 객체를 반복하겠다
+	for (var key in obj) {
+		console.log("key", key, "value", obj[key]);
+	}
+	
+	</script>
+</head>
+<body>
+
+</body>
+</html>

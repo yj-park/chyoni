@@ -1,0 +1,55 @@
+<!-- 
+	window 밑에 document라는 객체(+location, navigator, screen 등도 포함)가 존재함
+	document -> DOM
+	
+	* 엘리먼트 노드 생성하기
+	var ele = document.createElement("엘리먼트명");
+	(반환하는 값을 변수에 받아줘)
+	
+	* 텍스트 노드 생성하기
+	var textObj = document.createTextNode("텍스트");
+	
+	모든 웹사이트는 위 두 가지로 이루어져있어
+	<div>test</div>
+	
+	div:엘리먼트 노드
+	test:텍스트 노드
+	 
+	document~로 생성해주면 메모리에 올라가있는 거야
+	
+	* 특정 엘리먼트의 자식으로 추가
+	parentNode.appendChild(childNode)
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="doAdd(1);">H1추가</button>
+	<button onclick="doAdd(2);">DIV추가</button>
+	<div id="divList1">H1추가</div>
+	<div id="divList2">DIV추가</div>
+	
+	<script>
+		function doAdd(comm) {
+			//switch문도 연습해!
+			
+			var dList  = "divList1",
+			    eleObj = "h1";
+			
+			if (comm == 2) {
+				dList = "divList2"; 
+				eleObj = "div";
+			}
+			
+			var divList = document.querySelector("#" + dList);
+			var cEle = document.createElement(eleObj);
+			var text = document.createTextNode("테스트");
+			cEle.appendChild(text);
+			divList.appendChild(cEle);
+		}
+	</script>
+</body>
+</html>

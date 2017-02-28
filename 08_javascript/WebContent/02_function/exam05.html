@@ -1,0 +1,47 @@
+<!--
+	글로벌 변수와 window(자바스크립트 브라우저 최상위 객체) 
+	
+	글로벌 변수 (=전역변수. static과 같은 개념)
+	- 함수에 포함되지 않은 변수
+	- 함수에 포함되어 있는데 var로 선언되지 않은 변수
+	
+	글로벌 변수와 글로벌 함수(특정 객체 내에 속해있지 않은 함수)는 window 객체에 자동으로 속해있게 된다.
+	
+	window 객체는 스크립트엔진에서 제공해주는 객체 
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var msg = "전역1";
+	console.log("msg", msg);
+
+	console.log("window.msg", window.msg);
+	console.log("window['msg']", window['msg']);
+	
+	function func() {
+		var localMsg = "지역변수";
+		// 함수 내에 선언된 변수는 그 함수 내에서만 접근 가능
+		console.log("localMsg", localMsg);
+		
+		// var를 사용하지 않고 선언 시 전역변수(글로벌변수)로 사용 가능
+		msg2 = "전역변수2";
+	}
+	func();
+	
+	// console.log("outer - localMsg", localMsg);  // 접근 불가능. 에러 발생
+	console.log("outer - msg2", msg2); // var가 없는 글로벌변수이므로 함수 밖에서 접근 가능
+	
+	window.func();
+	
+	
+	
+</script>
+</head>
+<body>
+	
+</body>
+</html>

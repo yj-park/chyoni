@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+		function cal() {
+			var num1 = document.querySelector("#num1");
+			var num2 = document.querySelector("#num2");
+				if (isNaN(num1.value) || isNaN(num2.value)) {
+					alert("숫자를 입력하세요.");
+					return false;
+				}
+			var num3 = document.querySelector("#num3");
+			num3.value = Number(num1.value) + Number(num2.value);
+		}
+		
+	</script>
+</head>
+<body>
+	숫자1 : <input type="text" id="num1"/>
+	+숫자2 : <input type="text" id="num2"/>
+	= <input type="text" id="num3" readonly />
+	<input type="button" value="확인" onclick="cal()"/>
+</body>
+</html>

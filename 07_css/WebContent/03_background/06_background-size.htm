@@ -1,0 +1,52 @@
+<!-- 
+	background-size : auto, 크기지정, 백분율, cover, contain
+	
+	background-size : 배경 이미지의 크기 지정
+	//  넓이가 줄어드는 비율만큼 높이도 비율단위로 줄어든다.
+    background-size : 200px;
+    background-size : 200px 150px;
+    background-size : 50%;
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+	img { margin-top: 5px; }
+	#contain {
+		width: 574px; height: 358px;
+		background: url("../images/pic4.jpg") no-repeat;
+		
+		background-size: 287px 358px;
+		background-size: 287px 179px;
+		background-size: 287px;
+		background-size: 50%;
+		
+		border: 1px solid black;
+		width: 90%; height: 200px;
+		background-size: contain;
+	}
+	
+	#cover {
+		background: url("../images/pic4.jpg") no-repeat;		
+		border: 1px solid black;
+		width: 90%; height: 200px;
+		background-size: cover;
+	}
+	/* 넓이 하나만 줘도 그에 맞게 높이도 변경됨*/
+	/*
+	다양한 방법
+	div#contain {}
+	div:first-child {}
+	div:nth-child(odd) {}
+	div:nth-child(2n + 1) {}
+	body > div:nth-child(2n + 1) {}
+	*/
+</style>
+</head>
+<body>
+    <div id="contain"></div>
+    <div id="cover"></div>
+    <img src="../images/pic4.jpg" />
+</body>
+</html>

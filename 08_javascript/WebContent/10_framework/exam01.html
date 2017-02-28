@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="framework.js"></script>
+</head>
+<body>
+	<button id="btn1">html 변경</button>
+	<button id="btn2">html 추출</button>
+	<button id="btn3">text 변경</button>
+	<button id="btn4">input value 변경, 추출</button>
+	<br>
+	<button id="btn5">속성 변경, 추출</button>
+	<button id="btn6">CSS 속성</button>
+	<button id="btn7">엘리먼트 추가</button>
+	<button id="btn8">이벤트 설정</button>
+	<br>
+	<p id="btn9">이벤트 설정2</p>
+
+	<h1>라이브러리 만들기</h1>
+	<div id="msg">메세지 출력</div>
+	<h1 class="cMsg">class 속성 접근1</h1>
+	<p>class 속성 접근1</p>
+	<p>class 속성 접근1</p>
+	<p>class 속성 접근1</p>
+	
+	<!-- form이 아니니까 편하게 하려고 id 준 거 -->
+	아이디 <input type="text" id="email" name="email"/><br>
+	<div id="pList"></div>
+	
+	<script>
+		// 이벤트 설정2
+		$("#btn9").on("mousedown", function () {
+			alert("마우스가 눌러졌습니다.")
+		});
+	
+		// 이벤트 설정 (이벤트 설정은 on 끌 때는 off)
+		$("#btn8").on("click", function () {
+			alert("버튼 8 클릭됨")
+		});
+		
+		/*
+		// 이전 방식
+		var btn8 = document.querySelector("#btn8");
+		#btn8.addEventListener("click", function () {
+			alert("버튼 8 클릭됨)")
+		});
+		*/
+		
+		// 엘리먼트 추가
+		$("#btn7").addEventListener("click", function () {
+			/*
+			// 이전 방식
+			var h1Obj = document.createElement("h1");
+			var text = document.createTextNode("연습중");
+			h1Obj.appendChild(text);
+			
+			// id가 pList인 곳에 넣을래
+			var pList = document.querySelector("#pList");
+			pList.appendChild(h1Obj);
+			*/
+			
+			// 태그만 생성
+			// $("<h1></h1>");
+			// 엘리먼트 생성
+			$("#pList").append($("<h1>").html("연습중"));
+		});
+		
+	
+		// CSS 속성
+		$("#btn6").addEventListener("click", function () {
+			/*
+			// 이전 방식
+			var msg = document.querySelector("#msg");
+			msg.style.border = "1px solid tomato";
+			msg.style["color"] = "skyblue";
+			msg.style["background"] = "yellow";
+			alert(msg.style["color"]);
+			*/
+			
+			/*
+			$("#msg").css("border", "1px solid tomato");
+			$("#msg").css("color", "skyblue");
+			$("#msg").css("background", "yellow");
+			// attr이랑 유사해. 객체로 받을 수 있어!
+			*/
+			
+			$("#msg").css({
+				"border": "1px solid tomato", 
+				"color": "skyblue",
+				"background": "yellow"
+			});
+			alert($("#msg").css("color"));
+			
+		});
+		
+		// 속성 변경
+		$("#btn5").addEventListener("click", function () {
+			/*
+			// 이전 방식
+			var msg = document.querySelector("#msg");
+			msg.setAttribute("mymsg", "aaa");
+			msg.setAttribute("title", "연습중");
+			// console창에서 속성이 추가된 모습 확인 가능
+			
+			// 어떤 속성을 꺼낼 지 명시해줘야해
+			alert(msg.getAttribute("title"));
+			*/
+			
+			/*
+			// 매개변수가 두 개여야 함!
+			$("#msg").attr("mymsg", "aaa");
+			$("#msg").attr("title", "연습중ㅋㅋ");
+			alert($("#msg").attr("mymsg"));
+			
+			alert (
+			$("#msg").attr("mymsg", "aaa")   // 속성 설정
+					 .attr("title", "연습중ㅋㅋ") // 속성 설정
+					 .attr("title") /// 속성 추출
+			);
+			*/
+			
+			// key, value 쌍의 형태를 가지고 있으면 jquery가 객체를 지원해주므로 이런 형태로 할 수 있어
+			// key값 1개가 매개변수로 넘어가는 형태
+			$("#msg").attr({"mymsg": "aaa", "title": "연습중ㅋㅋ"});
+			
+			// id가 msg인 엘리먼트에 대해서 속성 값을 ~~ 설정해주세요. 그리고나서 title이라는 속성의 값을 추출해줘요
+			alert(
+				$("#msg").attr({"mymsg": "aaa", "title": "연습중ㅋㅋ"})
+						 .attr("title")
+			);
+			
+			
+		});
+	
+		// input value 변경, 추출
+		$("#btn4").addEventListener("click", function () {
+			/*
+			// 이전 방식
+			// 설정
+			var email = document.querySelector("#email");
+			email.value = "a@a.com";
+			// 추출 (객체명.value)
+			alert(email.value);
+			*/
+			
+			/*
+			$("#email").val("a@a.com");
+			alert($("#email").val());
+			*/
+			
+			alert($("#email").val("a@a.com").val());
+		});
+		
+	
+		// text 변경
+		$("#btn3").addEventListener("click", function () {
+			/*
+			// 이전 방식
+			var msg = document.querySelector("#msg");
+			msg.innerText = "<h1>메세지 동적 변경</h1>";
+			alert(msg.innerText);
+			*/
+		// id가 btn3인 버튼을 클릭하고 id가 msg에 text를 설정하겠다.
+		//	$("#msg").innerText = "변경";
+			
+			$("#msg").text("메세지 동적 변경");
+			alert($("#msg").text());
+		});
+	
+		// html 추출
+		btn2.addEventListener("click", function() {
+			/*
+			// id가 msg인 엘리먼트의 html을 경고창에 띄운다.
+			// 이전 방식
+			var msg = document.querySelector("#msg");
+			alert(msg.innerHTML);
+			
+			$("#msg").html("메세지 동적 변경");
+			*/
+			alert($("#msg").html());
+			
+			// 설정은 문자열 값을 주지만 그냥 추출할 때는 아무것도 안줄거~
+			// 
+			alert($("p").html());
+		});
+	
+	
+		// 객체에 접근하는 방법 1
+		// selector는 하나 밖에 없다는 전제 하에 사용. #만이 하나의 값을 가진다
+		// var msg = document.querySelector("#msg");
+		// console.dir(msg);
+		// 객체에 접근하는 방법 2
+		// selectorAll은 여러개의 경우에 사용
+		// var h1Obj = document.querySelectorAll("h1");
+		// var h1Obj = document.querySelectorAll("cMsg");
+		
+		// jquery에서는 id를 통해서 사용할 때는 $를 사용한다
+		// var msg2 = $("#msg");
+		// console.dir(msg2);
+		
+		// var msg = mlec("#msg"); 이렇게 하고 싶으면 함수가 return을 해줘야해
+		// var msg = $("#msg");
+		
+		
+		
+		// html 변경
+		// 클릭 이벤트를 btn1에 걸게요
+		btn1.addEventListener("click", function() {
+			
+			$("p").html("동적변경"); 
+			/* 자바스크립트
+			var pArr = document.querySelector("p");
+			for (var i = 0; i < pArr.length; i++) {
+				pArr[i].innerHTML = "동적변경";
+			}
+			*/
+			// $("#msg").html(); 값 받기 가능 getter
+			$("#msg").html("aaa").html("<h1>메세지 동적 변경</h1>"); // 값 세팅 가능 setter
+			// 호출을 계속해서 이어나갈 수 있는 체이닝 형식
+			// length가 없으니 undefined 되어서 반영이 안되는 것
+			// elements는 항상 2가지 경우 이므로 나눠서 만들어주자!
+		});
+		
+		/*
+		// p태그의 내용을 "동적변경"으로 바꾸고 싶은 경우 우리가 배운 방법
+		var pArr = document.querySelector("p");
+		for (var i = 0; i < pArr.length; i++) {
+			pArr[i].innerHTML = "동적변경";
+		}
+		
+		//var pArr = $("p"); // js파일에서 querySelectorAll 해줬기 때문에 이렇게 사용가능
+		$("p").html("동적변경"); 
+		// 엘리먼트 객체.함수  모든 p엘리먼트의 내용을 찾아서 동적변경으로 바꿔
+		// 객체를 다이나믹하게 추가할 수 있는 jquery의 특징
+		*/
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>	
+</body>
+</html>

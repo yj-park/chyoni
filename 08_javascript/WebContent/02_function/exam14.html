@@ -1,0 +1,31 @@
+<!-- 
+	클로저 
+	
+	- 함수 내의 지역변수를 함수 외부에서 사용할 수 있게 만드는 기술
+	- 로컬 변수를 참조하는 함수 내의 함수
+	- 생명주기가 끝난 외부 함수의 변수를 참조하는 변수
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function outer(val) {
+		var msg = "당신의 메세지 : " + val;
+		return function () {
+			return msg;
+		};
+	}
+	
+	var retFunc = outer("하이");
+	console.log(retFunc());
+	// outer안에 있는 지역변수를 참조하여 함수가 종료되었음에도 불구하고 외부에서 사용할 수 있도록 하는 클로저
+	
+	console.dir(retFunc);
+</script>
+</head>
+<body>
+
+</body>
+</html>

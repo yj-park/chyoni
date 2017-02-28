@@ -1,0 +1,41 @@
+<!-- 
+	객체 생성하는 방법(2가지)
+	
+	1. 리터럴 생성 방식
+		- {}
+	2. 생성자 생성 방식
+		- Object() 
+	
+	* 차이점 
+	  리터럴 생성 방식 {} 은 만들 때 프로퍼티 설정 가능
+		ex)	 var obj = {
+			 	id : hong	
+			 };
+	
+	
+	* 모든 객체들은 [[prototype]] (크롬에서 __proto__)이라는 
+	   부모의 prototype 객체를 가리키는 프로퍼티가 생성된다.
+	   (따라서, 자신에게 없으면 부모에 가서 불러올 수 있다)
+	
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var obj = {};
+	var obj2 = new Object();
+	
+	console.log( typeof (obj) );
+	console.log( typeof (obj2) );
+	
+	console.dir( obj );
+	console.dir( obj2 );
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

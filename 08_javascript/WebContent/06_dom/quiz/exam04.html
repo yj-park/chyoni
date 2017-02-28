@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="button" value="추가" onclick="$.add()" />
+	<div id="list"></div>
+	<script>
+	var count = 0;
+	function add() {
+		var listDiv = document.getElementById("listDiv");
+		var childDiv = document.createElement("div");
+		childDiv.setAttribute("id", "child_" + ++count);
+		
+		childDiv.innerHTML = "<h2>추가된 DIV id : child_" + count + "&nbsp;"
+		                   + "<input type='button' value='삭제' onclick='del(" + count + ")' />"
+		listDiv.appendChild(childDiv)
+	}
+	
+	function del(count) {
+		var delDiv = document.getElementById("child_" + count);
+		    delDiv.parentNode.removeChild(delDiv);
+	}
+	
+	/*	
+	
+	<input type="button" value="추가" onclick="$.add()" />
+	
+	function Manage(list) {
+		this.seq  = 0;
+		this.list = document.querySelector("#" + list);
+		this.add = function () {
+			this.seq++;
+			var html = "<div id='div" + this.seq + "'>"
+			         + "  <h2>추가된 DIV id : child_" + this.seq + " "
+			         + "  <input type='button' value='삭제' onclick='$.del(" + this.seq + ")' />"
+			         + "</div>";
+			this.list.innerHTML += html;
+		};
+		this.del = function (id) {
+			var div = document.querySelector("#div" + id);
+			    div.parentNode.removeChild(div);
+		}
+	};
+	var $ = new Manage("list");
+	*/
+	</script>
+</body>
+</html>

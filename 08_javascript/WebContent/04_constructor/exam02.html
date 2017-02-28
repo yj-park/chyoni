@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function Member (id) {
+		this.id = id;
+	}
+	
+	// 내 마음대로 Member.prototype에 원하는대로 변환 가능
+	
+	Member.prototype = {
+		info: function () {
+			console.log(id);
+		}
+	};
+	
+	Member.prototype.constructor = Member;
+	
+	var m = new Member("hong");
+	console.log(m);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

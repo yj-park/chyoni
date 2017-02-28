@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../framework-t.js"></script>
+</head>
+<body>
+	<h1>JSON 데이터 처리</h1>
+	<hr>
+	<div id="result">Ajax 실행 결과 표시</div>
+	
+	<button id="clearBtn">초기화</button>
+	<button id="send">호출</button>
+	
+	<script>
+		$("#clearBtn").on("click", function () {
+			$.ajax({
+				url: "exam06",
+				success: function (result) {
+					$("#result").html("");
+				}
+			});
+		});
+		
+		$("#send").on("click", function () {
+			$.ajax({
+				url: "exam06",
+				dataType: "json",
+				success: function (result) {
+						var html = "";
+						for (var i = 0; i < result.length; i++) {
+							var member = result[i];
+							html += "이름 : " + result[i].name +  ",나이 : " + result[i].age + "<br>";
+						}
+						$("#result").html(html);
+				}
+			});
+		});
+	</script>
+	
+<!--post일때 필수  
+	<form enctype="application/x-www-form-urlencoded"></form>
+--> 
+</body>
+</html>

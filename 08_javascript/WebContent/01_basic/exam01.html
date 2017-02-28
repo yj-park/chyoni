@@ -1,0 +1,27 @@
+<!--
+	javascript를 사용하기 위해서 <script>...</script> 사용 
+	<script> 태그를 사용하는 위치에는 제약이 없으나 주로 <head> 태그 안에 
+	또는 <body> 태그 종료 전(요즘 권장)에 사용한다.
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	// 자바스크립트 주석문 (자바와 동일)
+	/* 자바스크립트 주석문 */ 
+	alert(1);
+	// 경고창 띄우기
+</script>
+</head>
+<body>
+	<h1>자바스크립트</h1>
+	
+	<script>
+		// 다른 태그를 사용하기 위해서는 로딩이 된 다음에 실행해야하기 때문에 그 시간이 네트워크 상 지연될 수 있음. 따라서 body태그 전의 위치를 권장함
+		alert(2);
+	</script>
+</body>
+</html>

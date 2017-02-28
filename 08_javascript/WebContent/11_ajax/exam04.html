@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../framework-t.js"></script>
+</head>
+<body>
+	<h1>파라미터 처리 확인</h1>
+	<hr>
+	<div id="result">으하하하</div>
+	
+	<button id="clearBtn">초기화</button>
+	<button id="send1">GET 호출</button>
+	<button id="send2">POST 호출</button>
+	
+	<script>
+		$("#clearBtn").on("click", function () {
+			$("#result").html("");
+		});
+		
+		$("#send1").on("click", function () {
+			var xhr = new XMLHttpRequest();
+			
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4) {
+					if (xhr.status == 200) {
+						$("#result").html(xhr.responseText);
+					}
+				}
+			};
+			// 파라미터값 보내기
+			xhr.open("GET", "exam04?msg=test", true);
+			xhr.send(null);
+			
+		});
+		
+		$("#send2").on("click", function () {
+			var xhr = new XMLHttpRequest();
+			
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4) {
+					if (xhr.status == 200) {
+						$("#result").html(xhr.responseText);
+					}
+				}
+			};
+			// 파라미터값 보내기
+			xhr.open("POST", "exam04?", true);
+			
+			// post방식일 경우의 추가 처리
+			// header의 Content-Type을 설정해야한다.
+			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+			xhr.send("msg=test");
+		});
+	</script>
+	
+<!--post일때 필수  
+	<form enctype="application/x-www-form-urlencoded"></form>
+--> 
+</body>
+</html>

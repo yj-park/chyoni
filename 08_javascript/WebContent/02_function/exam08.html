@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/*
+	function call(cb) {
+		
+	}
+	function func() {
+		console.log("함수 실행됨");
+	}
+	
+	console.log(func); // 함수 자체를 찍은 것. 함수 참조. 함수 자체에 대한 정보
+	// console.log(func()); // 함수를 실행하는 것
+	// 결과값이 없으므로 undefined가 리턴됨
+	func();
+	
+	call(func); // 함수 자체에 대한 정보 
+	
+	function call() {
+		function callback() {
+			console.log("콜백 호출됨");
+		}
+		return callback;
+	}
+	
+	var func = call();
+	func();
+	
+	function call(cb) {
+		cb();
+	}
+	call(function () {
+		console.log("함수 호출됨");
+	});
+	*/
+	
+	function call() {
+		function callback() {
+			console.log("콜백 호출됨");
+		}
+		return callback;
+	}
+	
+	call()(); //callback이라는 함수가 넘어옴->그 넘어온 함수를 실행하라는 뜻
+</script>
+</head>
+<body>
+
+</body>
+</html>

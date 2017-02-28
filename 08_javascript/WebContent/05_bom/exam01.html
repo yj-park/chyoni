@@ -1,0 +1,53 @@
+<!-- 
+	팝업창 띄우기
+	
+	window.open(url, target, options)  중복체크, 주소찾기 등의 팝업창
+	팝업창이 보여줄 주소(비우기 가능. 비우고 페이지 내용 직접 작성), 팝업창의 이름, 팝업창의 형태
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function openPop(type) {
+		switch(type) {
+		case 1:
+			window.open("http://www.naver.com", "pop1", "width=400, height=300");
+			break;
+		case 2:
+			window.open("http://www.naver.com", "", "width=400, height=300");
+			// 팝업창의 이름에 해당하는 창이 없으면 계속해서 새 창을 띄워줌
+			break;
+		case 3:
+			console.log(screen.width, screen.height);
+			
+			var left = (screen.width - 400) / 2;
+			var top = (screen.height - 300) / 2;
+			window.open("http://www.naver.com", "", "top=" + top + ", left=" + left + ", width=400, height=300");
+			// top과 left 등을  통해 원하는 위치에 팝업창 띄우기
+			// 중앙에 팝업창을 띄우고 싶은 경우에는 스크린 넓이와 높이에서 가운데를 가져오면 중심점이 잡히고 스크린 넓이(screen.width)와 높이(screen.height)에서 각각 팝업창 넓이의 반만큼 빼줘
+			break;
+		case 4:
+			window.open("exam01_child.html", "pop1", "width=400, height=300");
+			// 내가 직접 작성한 페이지(자식페이지)를 띄울거야
+			// exam01은 exam01_child의 opener야
+			break;
+		}
+	}
+	
+	function doResult(msg) {
+		// id가 result인 엘리먼트를 참조하고 싶어! (css 문법 사용) 
+		var h1Obj = document.querySelector("#result");
+		h1Obj.innerHTML = msg;
+	}
+</script>
+</head>
+<body>
+	<button onclick="openPop(1);">팝업창1</button>
+	<button onclick="openPop(2);">팝업창2</button>
+	<button onclick="openPop(3);">팝업창3(위치)</button>
+	<button onclick="openPop(4);">팝업창4(자식창)</button>
+	<h1 id="result"></h1>
+</body>
+</html>

@@ -1,0 +1,61 @@
+/* 
+
+메뉴 화면 가운데에 위치 -> margin: 0 auto;
+a 링크 없애기
+li 기호 없애기  
+li 메뉴들 옆으로 붙이기 -> float: left;
+다닥다닥 붙은 a링크 영역 설정해주기 
+a태그는 inline 링크라서 width & height가 안먹혀 -> block으로 바꿔주자
+*/
+
+@CHARSET "UTF-8";
+
+* { margin: 0px; padding: 0px; }
+.container { 
+	width: 90%;
+	margin: 0 auto;
+	background: rgba(255, 0, 0, 0.3);
+}
+a { text-decoration: none; transition: 0.7s; }
+
+li { list-style: none; }
+
+ul.mainLnb { width: 960px; margin: 0 auto; }
+
+ul.mainLnb > li { float: left; }
+ul.mainLnb a { 
+	background: #d9d9d9;
+	width: 120px;
+	height: 30px;
+	display: block;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 30px;
+}
+ul.mainLnb > li > a { 
+	text-align: center;
+	margin: 2px;
+}
+ul.mainLnb > li:hover > a { 
+	background: #a9a9a9;
+	color: #fff;
+}
+
+ul.mainLnb> li > ul {
+	display: none;
+}
+
+ul.mainLnb> li:hover > ul {
+	display: block;
+}
+
+ul.mainLnb> li > ul > li > a {
+	margin-left: 2px;
+	padding-left: 5px;
+	box-sizing: border-box;
+	/* padding이 추가되면 넓이가 늘어나기 때문에 border선 안에 포함 */
+}
+ul.mainLnb> li > ul > li > a:hover {
+	background-color: green;
+	color: #fff;
+}

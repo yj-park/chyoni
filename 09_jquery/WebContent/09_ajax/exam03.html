@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<button>요청</button>
+	<div id="result"></div>
+	<script>
+		$("button").click(function () {
+			/*
+			// 1-1. get방식으로 호출 (parameter X)
+			$.get(
+				// 1. url 호출
+				"/09_jquery/ajax/exam01",
+				// 2. parameter
+				// 3. function
+				function (msg) {
+					$("#result").html(msg);
+				}
+			);
+			*/
+			/*
+			// 1-2. get방식으로 호출 (parameter O)
+			$.get(
+				// 1. url 호출
+				"/09_jquery/ajax/exam02",
+				// 2. parameter
+				{msg: "hello~"},
+				// 3. function
+				function (msg) {
+					$("#result").html(msg);
+				}
+			);
+			*/
+			/*
+			// 1-3. post방식으로 호출
+			$.post(
+				// 1. url 호출
+				"/09_jquery/ajax/exam02",
+				// 2. parameter
+				{msg: "hello~"},
+				// 3. function
+				function (msg) {
+					$("#result").html(msg);
+				}
+			);
+			*/
+			// 1-4. 가장 간단한 방식으로 원하는 위치에 값 넣기(jquery 사이트 ajax파트에서 확인 가능)
+			$("#result").load("/09_jquery/ajax/exam01");
+			
+			/*
+			$.ajax({
+				url: "/09_jquery/ajax/exam02",
+				type: "GET",
+				data: {msg: $("#msg").val()},
+				dataType: "html"
+			})
+			.done(function (msg) {
+				$("#result").html(msg);
+			});
+			*/
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+

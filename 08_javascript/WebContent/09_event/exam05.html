@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form id="f1" onsubmit="return chkForm();">
+		<button>확인</button> 
+	</form>
+	<form id="f2" >
+		<button>확인</button> 
+	</form>
+	
+	<script>
+		var f = document.querySelector("#f2");
+		// f2에 onsubmit을 걸래
+		f.onsubmit = function (e) {
+			alert("f2 폼에 들어왔음");
+			// only 기본 설정된 이벤트 중지		
+			e.preventDefault();
+			
+			
+			// 기본 설정된 이벤트 중지 + 이벤트 전파(같이 동작) 중지 기능
+	//		return false;  // submit이 진행되지 않도록 막아두기도
+		}
+	
+		function chkForm() {
+			return false;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 사용자가 입력한 데이터를 전송하기 위해서는 form태그로 감싸져있어야함-->
+	<h1>서블릿으로 데이터 전송</h1>
+	<form action="/06_servletjsp/servlet/test07" method="post">
+		id : <input type="text" name="msg"/>
+		<input type="submit" value="POST"/>
+	</form>
+	<!-- 한 페이지에는 여러개의 form이 들어갈 수 있지만 form끼리 중첩 될수는 없다 -->
+	<form action="/06_servletjsp/servlet/test07">
+		pass : <input type="text" name="msg"/>
+		<input type="submit" value="GET"/>
+	</form>
+</body>
+</html>

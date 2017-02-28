@@ -1,0 +1,42 @@
+<!-- 
+window.onload 기능 대체
+$(document).ready(function)
+단축된 표현 $(function)
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script src="../js/jquery-3.1.1.js"></script>
+	<script>
+		// 방법 1: window가 로딩된 다음 수행해!
+		window.onload = function () {
+		var h1Obj = document.querySelector("h1");
+		alert(h1Obj.innerHTML);
+		};
+		// body위에 있으면 h1에 접근할 수 없어. 스크립트가 먼저 실행되고 h1은 밑에서 로딩되니까 
+		// 방법 2: script를 body안에 넣기
+		
+		
+		// jQuery 방법 1: $(document).ready(function); -> window.onload방법을 대체할 수 있는 방법
+		$(document).ready(function () {
+			alert($("h1").html());
+		});
+		
+		// jQuery 방법 2: $(function); -> function 자동 수행
+		$(function () {
+			alert($("h1").html());
+		});
+		
+	</script>
+</head>
+<body>
+	<h1>jQuery란?</h1>
+	
+</body>
+</html>
+
+
+
+

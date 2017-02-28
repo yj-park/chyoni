@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div {
+	position: absolute;
+	background-color: #000;
+	color: #fff;
+	padding: 10px;
+	font-size: 40px;
+	font-weight: bold;
+	width: 600px;
+	height: 400px;
+	left: 200px;
+	top: -420px;
+}
+#d1 {background-color: red;}
+#d2 {background-color: orange;}
+#d3 {background-color: yellow;}
+#d4 {background-color: green;}
+#d5 {background-color: blue;}
+</style>
+</head>
+<body>
+	<p><a href="#" onclick="showSlide()">다음 슬라이드</a></p>
+	<div id="d1">슬라이드1</div>
+	<div id="d2">슬라이드2</div>
+	<div id="d3">슬라이드3</div>
+	<div id="d4">슬라이드4</div>
+	<div id="d5">슬라이드5</div>
+</body>
+<script>
+var x = -400;
+var i = 1;
+
+function showSlide() {
+	if (i > 5) {
+		alert("마지막 슬라이드입니다.");
+		return ;
+	}
+	x += 30;
+	var obj = document.querySelector("#d" + i);
+	obj.style.top = x + "px";
+	if (x < 100) {
+		setTimeout(showSlide, 100);
+	} else {
+		x = -400;
+		i++;
+	}
+}
+/*
+if (count > 5) {
+	alert("마지막 슬라이드입니다.");
+	return false;
+}
+*/
+</script>
+</html>

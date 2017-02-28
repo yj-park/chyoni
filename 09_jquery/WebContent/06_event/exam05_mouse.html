@@ -1,0 +1,54 @@
+<!--
+	prepend: jQuery 집합체(collection) 안에 있는 각 요소의 첫번째 자식 요소에 값을 삽입
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+	p {
+		font-size: 20px;
+		font-weight: bold;
+		height: 40px;
+		background: tomato;
+		color: white;
+		text-align: center;
+		line-height: 40px;
+	}
+	div {
+		height: 600px;
+		overflow: auto;
+		background: yellow;
+	}
+</style>
+<script src="../js/jquery-3.1.1.js"></script>
+</head>
+<body>
+    <p>이벤트 <span>연습</span></p>
+    <div></div>
+	<script>
+		$("p").mouseenter(function () {
+				  $("div").prepend("마우스 들어옴<br>");
+		      })
+		      .mouseleave(function () {
+				  $("div").prepend("마우스 나감<br>");
+		      })
+		      .mousemove(function () {
+				  $("div").prepend("마우스 움직이는중<br>");
+		      })
+		      .mousedown(function () {
+				  $("div").prepend("마우스 눌렀음<br>");
+		      })
+		      .mouseup(function () {
+				  $("div").prepend("마우스 올라갔음<br>");
+		      });
+	</script>    
+</body>
+</html>
+
+
+
+
+
+
+

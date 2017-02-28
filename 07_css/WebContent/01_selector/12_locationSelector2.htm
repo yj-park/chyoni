@@ -1,0 +1,32 @@
+<!-- 
+가상 위치 선택자 -> 순서는 맨 앞이 1번이 된다.
+형식 :  
+:nth-child(even)
+:nth-child(odd)
+ -->
+<html>
+<head>
+<meta charset="utf-8" />
+<title> 속성 선택 스타일 </title>
+<style type="text/css">
+	/* h1 중에서 따지는 게 아니라 전체 태그 중 h1이 홀수번째인지 아닌지 찾는 것 */
+	h1:nth-child(odd) {
+		background: skyblue;
+	}
+	
+	h1:nth-child(even) {
+		background: pink;
+	}
+</style>                        
+</head>
+<body>
+    <h1>h1</h1>     <!--  1  -->
+    <h1>h2</h1>     <!--  2  -->
+    <p>주의사항</p>  <!--  3  -->
+    <h1>h3</h1>     <!--  4  -->
+    <p>주의사항</p>  <!--  5  -->
+    <h1>h4</h1>
+    <h1>h5</h1>
+    <h1>h6</h1>
+</body>
+</html>

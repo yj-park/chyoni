@@ -1,0 +1,43 @@
+<!-- 
+	this
+	
+	객체의 프로퍼티 함수 호출 시 함수 안에서의 this는 함수를 호출한 객체에 바인딩된다.
+	
+	전역함수(객체를 통해서 호출하지 않은 것) 안에서의 this는 전역객체(window)에 바인딩된다.
+	
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function msg() {
+		console.log(this.name);
+	}
+	window.name = "aaa";
+	
+	var member1 = {
+		name : "홍길동"
+	};
+	var member2 = {
+		name : "강성호"
+	};
+	
+	// 각 멤버에 같은 함수 msg를 참조시킴
+	member1.msg = msg;
+	member2.msg = msg;
+	
+	// 함수는 똑같은데 부르는 객체가 누구냐에 따라서 결과가 달라짐
+	member1.msg();
+	member2.msg();
+	
+	// 이 때의 this는 직접 함수를 부르기 때문에 window 객체를 부른다 
+	msg();
+</script>
+</head>
+<body>
+
+</body>
+</html>

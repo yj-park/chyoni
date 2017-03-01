@@ -1,4 +1,4 @@
-package kr.co.easybook.member.vo;
+package kr.co.easybook.repository.vo;
 
 import java.util.Date;
 
